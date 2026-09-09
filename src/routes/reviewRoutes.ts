@@ -3,10 +3,10 @@ import { getAllReviews, getReviewById, createReview, updateReview, deleteReview 
 
 const router = express.Router()
 
-router.get('/reviews', getAllReviews)
-router.get('/reviews/:id', getReviewById)
-router.post('/reviews', createReview)
-router.patch('/reviews/:id', updateReview)
-router.delete('/reviews/:id', deleteReview)
+router.get('/', getAllReviews)
+router.get('/:id', getReviewById)
+router.post('/', createReview)
+router.patch('/:id', updateReview)
+router.delete('/:id', deleteReview)
 
 export default router

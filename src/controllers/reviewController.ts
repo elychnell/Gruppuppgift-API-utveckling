@@ -28,7 +28,7 @@ export const getReviewById = async (req: Request, res: Response) => {
 }
 
 export const createReview = async (req: Request, res: Response) => {
-   const {name, content, rating, bookId} = req.body
+   const {name, content, rating, review_id} = req.body
 
   if (name === undefined) {
     res.status(400).json({error: 'Title is required'}) 
@@ -45,14 +45,14 @@ export const createReview = async (req: Request, res: Response) => {
     return; 
   }
 
-  if (bookId === undefined) {
-    res.status(400).json({error: 'Book ID is required'}) 
+  if (review_id === undefined) {
+    res.status(400).json({error: 'Review ID is required'}) 
     return; 
   }
 
   try {
-    const result = await reviews.create({name, content, rating, bookId});
-    res.status(201).json({message: 'Product created', newProduct: {id: result._id, name: name, content: content, rating: rating, bookId: bookId}})
+    const result = await reviews.create({name, content, rating, review_id});
+    res.status(201).json({message: 'Product created', newProduct: {id: result._id, name: name, content: content, rating: rating, review_id: review_id}})
 
   } catch (error: unknown) {
     console.error('SERVER ERROR IN CREATEPRODUCT:', error);
