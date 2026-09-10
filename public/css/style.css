@@ -21,15 +21,28 @@
     align-items: center;
 }
 
-.bdContainer .bookDetails {
-  height: 325px;
-  width: 600px;
+
+/* Book details */
+
+.bdContainer .detailsBox {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.bdContainer .detailsBox .bookImg {
+  border: 1px solid #ff0000;
+}
+
+.bdContainer .detailsBox .bookDetails {
+  width: 500px;
   border: 1px solid #ff0000;
 }
 
 .bdContainer .reviews {
-  height: 325px;
-  width: 600px;
+  margin-top: 10px;
+  height: 600px;
+  width: 700px;
   border: 1px solid #ff0000;
 }
 
