@@ -2,19 +2,6 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 /*
-const category = new Schema({
-
-  name: {
-    type: String,
-    required: true
-  },
-  created_at: { 
-    type: Date, 
-    default: Date.now 
-  }
-});
-
-
 const book = new Schema({
   
   title: {
@@ -44,40 +31,35 @@ const book = new Schema({
     default: Date.now 
   }
 });
-
-
 */
 
-const bookReview = new Schema({
+const reviews = new Schema({
   
-  title: {
+  name: {
     type: String,
     required: true
   },
-  description: {
+  content: {
     type: String,
     required: true
   },
-  stock: {
+  rating: {
     type: Number,
+    min:1,
+    max:5,
     required: true
   },
-  price: {
-    type: Number,
-    required: true
-  },
-  image: {
-    type: String,
-    required: false,
-    default: null
-  },
-  categories: [category],
   created_at: { 
     type: Date, 
     default: Date.now 
+  },
+  book_id: {
+    type: Schema.Types.ObjectId,
+    ref: 'book',
+    required: false
   }
+
 });
-
-
-
-export default mongoose.model('bookReview', bookReview)
+// export default mongoose.model('users', users)
+// export default mongoose.model('books', books)
+export default mongoose.model('model', reviews)

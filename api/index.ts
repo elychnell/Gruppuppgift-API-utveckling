@@ -77,14 +77,15 @@ app.use(express.static(path.join(process.cwd(), 'public')));
 // Routes
 import authRouter from '../src/routes/auth'
 import greetingRouter from '../src/routes/greetings'
+import reviewRoutes from '../src/routes/reviewRoutes'
+
 app.use('/api/auth', authRouter)
 app.use('/api/greetings', greetingRouter)
-
-
+app.use('/api/reviews', reviewRoutes)
 
 // Connect To DB
-// import mongoose from 'mongoose';
-// mongoose.connect(process.env.MONGODB_URL || "");
+import mongoose from 'mongoose';
+mongoose.connect(process.env.MONGODB_URL || "");
 
 // Start the express server
 const PORT = 3000
