@@ -39,3 +39,31 @@
     align-items: center;
     gap: 5px;
 }
+
+.bdContainer .addReview .reviewForm .rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.bdContainer .addReview .reviewForm .rating input {
+  display: none;
+}
+
+.bdContainer .addReview .reviewForm .rating label {
+  font-size: 2rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+/* Hover + alla stjärnor till vänster om den */
+.bdContainer .addReview .reviewForm .rating label:hover,
+.bdContainer .addReview .reviewForm .rating label:hover ~ label {
+  color: gold;
+}
+
+/* Vald stjärna + alla stjärnor till vänster */
+.bdContainer .addReview .reviewForm .rating input:checked ~ label {
+  color: gold;
+}

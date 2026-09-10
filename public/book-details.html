@@ -9,6 +9,7 @@
 </head>
 <body>
   <div class="bdContainer">
+    <div id="bookImg" class="bookImg"></div>
    <div id="bookDetails" class="bookDetails">
    </div>
    <div id="reviews" class="reviews">
@@ -20,13 +21,22 @@
     <label for="reviewerName">Your Name:</label>
     <input type="text" id="reviewerName" name="reviewerName" required>
     <label for="rating">Your Rating:</label>
-    <select name="rating" id="rating">
-    <option value="1">★☆☆☆☆ - 1</option>
-    <option value="2">★★☆☆☆ - 2</option>
-    <option value="3">★★★☆☆ - 3</option>
-    <option value="4">★★★★☆ - 4</option>
-    <option value="5">★★★★★ - 5</option>
-    </select>
+    <div class="rating">
+  <input type="radio" name="rating" value="1" id="star1">
+  <label for="star1">★</label>
+
+  <input type="radio" name="rating" value="2" id="star2">
+  <label for="star2">★</label>
+
+  <input type="radio" name="rating" value="3" id="star3">
+  <label for="star3">★</label>
+
+  <input type="radio" name="rating" value="4" id="star4">
+  <label for="star4">★</label>
+
+  <input type="radio" name="rating" value="5" id="star5">
+  <label for="star5">★</label>
+</div>
     <input type="text" id="reviewerName" name="reviewerName" required>
     <label for="reviewText">Your Review:</label>
     <textarea id="reviewText" name="reviewText" required></textarea>
