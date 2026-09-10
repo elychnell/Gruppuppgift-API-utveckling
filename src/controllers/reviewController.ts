@@ -1,5 +1,6 @@
 import { Request, Response } from "express"
 import reviews from "../models/reviewModel"
+import books from "../models/booksModel"
 
 export const getAllReviews = async (req: Request, res: Response) => {
    try {
@@ -17,7 +18,7 @@ export const getReviewById = async (req: Request, res: Response) => {
     const result = await reviews.findById(id);
 
     if (!result) {
-      res.status(404).json({message: "Product not found"})
+      res.status(404).json({message: "Review not found"})
       return  
     }
     res.json(result)
@@ -31,12 +32,12 @@ export const createReview = async (req: Request, res: Response) => {
    const {name, content, rating, book_id} = req.body
 
   if (name === undefined) {
-    res.status(400).json({error: 'Title is required'}) 
+    res.status(400).json({error: 'Name is required'}) 
     return; 
   }
 
   if (content === undefined) {
-    res.status(400).json({error: 'Description is required'}) 
+    res.status(400).json({error: 'Content is required'}) 
     return; 
   }
 
@@ -49,13 +50,26 @@ export const createReview = async (req: Request, res: Response) => {
     res.status(400).json({error: 'Book ID is required'}) 
     return; 
   }
+  // Check if the book exists before creating a review
+  try {
+    const result = await books.findById(book_id);
 
+    if (!result) {
+      res.status(404).json({message: "Book not found"})
+      return 
+    }
+  } catch(error: unknown) {
+    const message = error instanceof Error ? error.message : 'Unknown error'
+    res.status(500).json({error: message})
+  }
+
+  // Create the review if the book exists
   try {
     const result = await reviews.create({name, content, rating, book_id});
-    res.status(201).json({message: 'Product created', newProduct: {id: result._id, name: name, content: content, rating: rating, book_id: book_id}})
+    res.status(201).json({message: 'Review created', newReview: {id: result._id, name: name, content: content, rating: rating, book_id: book_id}})
 
   } catch (error: unknown) {
-    console.error('SERVER ERROR IN CREATEPRODUCT:', error);
+    console.error('SERVER ERROR IN CREATEREVIEW:', error);
     const message = error instanceof Error ? error.message : 'Unknown error'
     res.status(500).json({error: message})
   }
@@ -89,11 +103,11 @@ return;
     const result = await reviews.findByIdAndUpdate(id, updateData, {returnDocument: 'after'});
     
     if (!result) {
-      res.status(404).json({message: `Product ${id} not found`})
+      res.status(404).json({message: `Review ${id} not found`})
       return;
     }
   
-    res.json({message: `Product ${id} updated`})
+    res.json({message: `Review ${id} updated`})
   } catch(error: unknown) {
     const message = error  instanceof Error ? error.message : 'Unknown error'
     res.status(500).json({error: message})
@@ -105,10 +119,10 @@ export const deleteReview = async (req: Request, res: Response) => {
   try {
     const result = await reviews.findByIdAndDelete(id);
     if (!result) {
-      res.status(404).json({message: `Product ${id} not found`})
+      res.status(404).json({message: `Review ${id} not found`})
       return
     }
-    res.json({message: `Product ${id} deleted`})
+    res.json({message: `Review ${id} deleted`})
   } catch(error: unknown) {
     const message = error  instanceof Error ? error.message : 'Unknown error'
     res.status(500).json({error: message})
