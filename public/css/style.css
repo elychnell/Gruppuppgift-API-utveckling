@@ -22,12 +22,12 @@
 }
 
 
-/* Book details */
+/* Book details page */
 
 .bdContainer .detailsBox {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 5px;
 }
 
 .bdContainer .detailsBox .bookImg {
@@ -37,26 +37,66 @@
 .bdContainer .detailsBox .bookDetails {
   width: 500px;
   border: 1px solid #ff0000;
+  padding-left: 10px;
 }
 
+.bdContainer .detailsBox .bookDetails .genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.bdContainer .detailsBox .bookDetails .genres .genre {
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+  padding: 2px 6px;
+}
+
+/* Reviews */
 .bdContainer .reviews {
-  margin-top: 10px;
+  margin-top: 5px;
   height: 600px;
   width: 700px;
   border: 1px solid #ff0000;
 }
 
+.bdContainer .reviews .review {
+  border-bottom: 1px solid #ccc;
+  padding: 15px;
+  text-align: center;
+}
+.bdContainer .reviews .review .content {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+/* Review Form */
 .bdContainer .addReview .reviewForm {
+    margin-top: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
+    border: 1px solid #ff0000;
+    padding: 10px;
+    width: 600px;
+}
+
+.bdContainer .addReview .reviewForm h3 {
+  margin-bottom: 0px;
+}
+
+.bdContainer .addReview .reviewForm .rating-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
 .bdContainer .addReview .reviewForm .rating {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: flex-end;
+  align-items: center;
 }
 
 .bdContainer .addReview .reviewForm .rating input {

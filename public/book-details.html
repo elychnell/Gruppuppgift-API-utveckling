@@ -19,30 +19,41 @@
    <div id="addReview" class="addReview">
 <form id="reviewForm" class="reviewForm">
   <h3>Add a Review</h3>
-    <label for="reviewerName">Your Name:</label>
-    <input type="text" id="reviewerName" name="reviewerName" required>
-    <label for="rating">Your Rating:</label>
-    <div class="rating">
-  <input type="radio" name="rating" value="1" id="star1">
-  <label for="star1">★</label>
+<div class="form-group rating-group">
+<label for="rating">Your Rating:</label>
 
-  <input type="radio" name="rating" value="2" id="star2">
-  <label for="star2">★</label>
+  <div class="rating">
+    <input type="radio" name="rating" value="1" id="star1">
+    <label for="star1">★</label>
 
-  <input type="radio" name="rating" value="3" id="star3">
-  <label for="star3">★</label>
+    <input type="radio" name="rating" value="2" id="star2">
+    <label for="star2">★</label>
 
-  <input type="radio" name="rating" value="4" id="star4">
-  <label for="star4">★</label>
+    <input type="radio" name="rating" value="3" id="star3">
+    <label for="star3">★</label>
 
-  <input type="radio" name="rating" value="5" id="star5">
-  <label for="star5">★</label>
+    <input type="radio" name="rating" value="4" id="star4">
+    <label for="star4">★</label>
+
+    <input type="radio" name="rating" value="5" id="star5">
+    <label for="star5">★</label>
+  </div>
 </div>
-    <input type="text" id="reviewerName" name="reviewerName" required>
-    <label for="reviewText">Your Review:</label>
-    <textarea id="reviewText" name="reviewText" required></textarea>
-    <button type="submit">Submit Review</button>
-  </form>
+<textarea
+    id="reviewText"
+    name="reviewText"
+    placeholder="Your Review"
+    required
+  ></textarea>
+
+  <input
+    type="text"
+    id="reviewerName"
+    name="reviewerName"
+    placeholder="Your Name"
+    required
+  >
+  <button type="submit">Submit Review</button>
   </div>
   </div>
   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
