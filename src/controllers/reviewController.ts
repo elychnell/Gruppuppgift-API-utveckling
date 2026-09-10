@@ -41,8 +41,8 @@ export const createReview = async (req: Request, res: Response) => {
     return; 
   }
 
-  if (rating === undefined) {
-    res.status(400).json({error: 'Rating is required'}) 
+  if (typeof rating !== 'number' || rating < 1 || rating > 5) {
+    res.status(400).json({error: 'Rating is required and must be a number between 1 and 5'}) 
     return; 
   }
 
@@ -61,6 +61,7 @@ export const createReview = async (req: Request, res: Response) => {
   } catch(error: unknown) {
     const message = error instanceof Error ? error.message : 'Unknown error'
     res.status(500).json({error: message})
+    return
   }
 
   // Create the review if the book exists

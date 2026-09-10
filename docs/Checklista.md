@@ -65,25 +65,25 @@
 
 ### API
 
-- [ ] Skapa modellen för reviews (kopplingen till boken fungerar som `todo_id` på subtasks — barnet håller förälderns id)
-- [ ] Koppla ihop bok och reviews så en bok kan hämtas med alla sina reviews i ett anrop (görs tillsammans med ansvarsområde 2)
-- [ ] Bygg endpoints för att hämta alla reviews och en enskild review (båda öppna)
-- [ ] Bygg endpointen för att skapa en review (öppen — inget konto krävs)
-  - [ ] Kontrollera att betyget ligger mellan 1 och 5
-  - [ ] Kontrollera att boken faktiskt finns innan reviewen sparas
-- [ ] Bygg uppdatera och radera (båda bakom `verifyToken`)
+- [X] Skapa modellen för reviews (kopplingen till boken fungerar som `todo_id` på subtasks — barnet håller förälderns id)
+- [X] Koppla ihop bok och reviews så en bok kan hämtas med alla sina reviews i ett anrop (görs tillsammans med ansvarsområde 2)
+- [X] Bygg endpoints för att hämta alla reviews och en enskild review (båda öppna)
+- [X] Bygg endpointen för att skapa en review (öppen — inget konto krävs)
+  - [X] Kontrollera att betyget ligger mellan 1 och 5
+  - [X] Kontrollera att boken faktiskt finns innan reviewen sparas
+- [*] Bygg uppdatera och radera (båda bakom `verifyToken`)
 
 ### Klient
 
-- [ ] Bygg boksidan (läser bokens id ur adressfältet, samma mönster som todo.html)
-  - [ ] Del 1: bokens uppgifter med en tillbaka-länk
-  - [ ] Del 2: formulär för en ny review
-  - [ ] Del 3: lista med bokens reviews
-- [ ] När en ny review sparats: hämta boken igen med tillhörande reviews så listan uppdateras
+- [X] Bygg boksidan (läser bokens id ur adressfältet, samma mönster som todo.html)
+  - [X] Del 1: bokens uppgifter med en tillbaka-länk
+  - [X] Del 2: formulär för en ny review
+  - [X] Del 3: lista med bokens reviews
+- [X] När en ny review sparats: hämta boken igen med tillhörande reviews så listan uppdateras
 
 ---
 
 ## Att tänka på
 
-- [ ] Ansvarsområde 2 och 3 måste komma överens om kopplingen mellan bok och review — görs tillsammans
-- [ ] Under väntetid: bygg klart API-delarna och bygg klienten med hårdkodad testdata i HTML:en
+- [X] Ansvarsområde 2 och 3 måste komma överens om kopplingen mellan bok och review — görs tillsammans
+- [X] Under väntetid: bygg klart API-delarna och bygg klienten med hårdkodad testdata i HTML:en
