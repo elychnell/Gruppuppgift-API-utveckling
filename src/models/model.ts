@@ -45,13 +45,15 @@ const reviews = new Schema({
   },
   rating: {
     type: Number,
+    min:1,
+    max:5,
     required: true
   },
   created_at: { 
     type: Date, 
     default: Date.now 
   },
-  review_id: {
+  book_id: {
     type: Schema.Types.ObjectId,
     ref: 'book',
     required: false
