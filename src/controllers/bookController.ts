@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import book from '../models/booksModel';
+import review from '../models/reviewModel';
 
 // GET /api/books
 export const getAllBooks = async (req: Request, res: Response) => {
@@ -66,6 +67,9 @@ export const deleteBook = async (req: Request, res: Response) => {
       res.status(404).json({ message: 'Book not found' });
       return;
     }
+
+    // Delete all reviews together with deleted book
+    await review.deleteMany({ book_id: id });
     res.json({ message: 'Book deleted successfully' });
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Unknown error';
