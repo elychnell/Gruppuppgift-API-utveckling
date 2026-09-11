@@ -71,7 +71,7 @@
 - [X] Bygg endpointen för att skapa en review (öppen — inget konto krävs)
   - [X] Kontrollera att betyget ligger mellan 1 och 5
   - [X] Kontrollera att boken faktiskt finns innan reviewen sparas
-- [*] Bygg uppdatera och radera (båda bakom `verifyToken`)
+- [X] Bygg uppdatera och radera (båda bakom `verifyToken`)
 
 ### Klient
 
