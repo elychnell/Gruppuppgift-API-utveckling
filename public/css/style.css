@@ -14,13 +14,22 @@
   color: #0f5132;
 }
 
-/* BOOK DETAILS */
-.bdContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* BOOKS startpage*/
+#bookList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid #ff0000;
+  height: 100%;
 }
 
+/* BOOK DETAILS */
+.bdContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 /* Book details page */
 
@@ -71,14 +80,14 @@
 
 /* Review Form */
 .bdContainer .addReview .reviewForm {
-    margin-top: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    border: 1px solid #ff0000;
-    padding: 10px;
-    width: 600px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #ff0000;
+  padding: 10px;
+  width: 600px;
 }
 
 .bdContainer .addReview .reviewForm h3 {
@@ -89,7 +98,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 .bdContainer .addReview .reviewForm .rating {

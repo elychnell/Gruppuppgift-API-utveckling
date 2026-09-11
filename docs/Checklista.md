@@ -42,7 +42,7 @@
   - [x] Stäm av med ansvarsområde 3 — boken ska kunna hämtas tillsammans med sina reviews
 - [x] Bygg endpointen som hämtar alla böcker (öppen, ej inloggning krävs)
 - [x] Bygg endpointen som hämtar en enskild bok med tillhörande reviews (samma mönster som todos/subtasks)
-- [ ] Kontrollera att skapa, uppdatera och radera ligger bakom `verifyToken`
+- [x] Kontrollera att skapa, uppdatera och radera ligger bakom `verifyToken`
 - [x] Vid radering av en bok: radera även bokens reviews (MongoDB gör inte detta automatiskt)
 - [ ] Om separat adminsida för bokhantering: lägg till skyddad route, med rätt ordning
   ```
@@ -54,7 +54,7 @@
 
 ### Klient
 
-- [ ] Bygg besökarnas boklista, där varje bok länkar vidare till sin egen sida (bokens id i adressfältet)
+- [x] Bygg besökarnas boklista, där varje bok länkar vidare till sin egen sida (bokens id i adressfältet)
 - [ ] Bygg listan över böcker i adminpanelen
 - [ ] Bygg formuläret för att skapa en ny bok
   - [ ] Hantera att `genres` är en array i databasen men ett textfält i formuläret — dela upp texten innan den sparas
