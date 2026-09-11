@@ -15,25 +15,111 @@
   <body>
     <div class="container">
       <a href="login.html" class="btn btn-outline-secondary ms-2"
-        >Login &rarr;</a
-      >
+        >Login &rarr;
+      </a>
+    
+    </div>
+    <!-- Main page with book listings -->
+    <h1 class="text-center mb-4">Book List</h1>
+    <div id="bookList"></div>
 
-       <h1 class="text-center mb-4">Book List</h1>
-    <div id="bookList"> 
+    <!-- Admin book list, move to admin page later on-->
+    <h1 class="text-center mb-4">AdminBook List</h1>
+    <div id="adminBookList">
+      <script src="js/startpage.js"></script>
 
-   
-  
+      <script>
+        displayBooks();
+        displayBooksToAdmin();
+      </script>
+    </div>
 
-    <script src="js/startpage.js"></script>
+    <!--Form to post a new book, move to admin page later on and apply verifyToken-->
+
+    <h1 class="text-center mb-4">Add New Book</h1>
+    <form id="createBookForm" class="mb-4">
+      <div class="mb-3">
+        <label for="image" class="form-label">Image URL</label>
+        <input
+          type="text"
+          class="form-control"
+          id="image"
+          name="image"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="thumbnail" class="form-label">Thumbnail URL</label>
+        <input
+          type="text"
+          class="form-control"
+          id="thumbnail"
+          name="thumbnail"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          name="title"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          class="form-control"
+          id="description"
+          name="description"
+          required
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="author" class="form-label">Author</label>
+        <input
+          type="text"
+          class="form-control"
+          id="author"
+          name="author"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="genres" class="form-label">Genres</label>
+        <input
+          type="text"
+          class="form-control"
+          id="genres"
+          name="genres"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="published_year" class="form-label">Published Year</label>
+        <input
+          type="number"
+          min="0"
+          class="form-control"
+          id="published_year"
+          name="published_year"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Add Book</button>
+    </form>
 
     <script>
-      displayBooks();
+      src =
+        'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js';
+      integrity =
+        'sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz';
+      crossorigin = 'anonymous';
     </script>
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
     <script src="js/functions.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/create-book.js"></script>
   </body>
 </html>
