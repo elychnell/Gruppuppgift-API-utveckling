@@ -27,6 +27,7 @@ function renderBooks(books, container) {
             <p>Author: ${book.author}</p>
             <p>Genres: ${book.genres.join(', ')}</p>
             <p>Published Year: ${book.published_year}</p>
+            
           </a>
         </div>
       `,
@@ -46,25 +47,7 @@ function renderAdminBooks(books, container) {
           <p>Author: ${book.author}</p>
           <p>Genres: ${book.genres.join(', ')}</p>
           <p>Published Year: ${book.published_year}</p>
-        </div>
-      `,
-    )
-    .join('');
-
-  container.innerHTML = booksHTML;
-}
-
-// Visa adminlistan med redigeringsknapp
-function renderAdminBooks(books, container) {
-  const booksHTML = books
-    .map(
-      (book) => `
-        <div class="book">
-          <h3>${book.title}</h3>
-          <p>Author: ${book.author}</p>
-          <p>Genres: ${book.genres.join(', ')}</p>
-          <p>Published Year: ${book.published_year}</p>
-   
+          <button id="deleteButton" data-book-id="${book.id}">delete</button>
         </div>
       `,
     )
