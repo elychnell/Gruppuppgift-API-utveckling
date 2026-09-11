@@ -44,6 +44,7 @@
 - [x] Bygg endpointen som hämtar en enskild bok med tillhörande reviews (samma mönster som todos/subtasks)
 - [x] Kontrollera att skapa, uppdatera och radera ligger bakom `verifyToken`
 - [x] Vid radering av en bok: radera även bokens reviews (MongoDB gör inte detta automatiskt)
+- [] Skapa en knapp för delete i adminpanelen
 - [ ] Om separat adminsida för bokhantering: lägg till skyddad route, med rätt ordning
   ```
   router.get('/', fetchAllBooks)               // öppen
@@ -56,7 +57,7 @@
 
 - [x] Bygg besökarnas boklista, där varje bok länkar vidare till sin egen sida (bokens id i adressfältet)
 - [x] Bygg listan över böcker i adminpanelen
-- [ ] Bygg formuläret för att skapa en ny bok
+- [x] Bygg formuläret för att skapa en ny bok
   - [ ] Hantera att `genres` är en array i databasen men ett textfält i formuläret — dela upp texten innan den sparas
 
 ---
@@ -65,25 +66,25 @@
 
 ### API
 
-- [X] Skapa modellen för reviews (kopplingen till boken fungerar som `todo_id` på subtasks — barnet håller förälderns id)
-- [X] Koppla ihop bok och reviews så en bok kan hämtas med alla sina reviews i ett anrop (görs tillsammans med ansvarsområde 2)
-- [X] Bygg endpoints för att hämta alla reviews och en enskild review (båda öppna)
-- [X] Bygg endpointen för att skapa en review (öppen — inget konto krävs)
-  - [X] Kontrollera att betyget ligger mellan 1 och 5
-  - [X] Kontrollera att boken faktiskt finns innan reviewen sparas
-- [X] Bygg uppdatera och radera (båda bakom `verifyToken`)
+- [x] Skapa modellen för reviews (kopplingen till boken fungerar som `todo_id` på subtasks — barnet håller förälderns id)
+- [x] Koppla ihop bok och reviews så en bok kan hämtas med alla sina reviews i ett anrop (görs tillsammans med ansvarsområde 2)
+- [x] Bygg endpoints för att hämta alla reviews och en enskild review (båda öppna)
+- [x] Bygg endpointen för att skapa en review (öppen — inget konto krävs)
+  - [x] Kontrollera att betyget ligger mellan 1 och 5
+  - [x] Kontrollera att boken faktiskt finns innan reviewen sparas
+- [x] Bygg uppdatera och radera (båda bakom `verifyToken`)
 
 ### Klient
 
-- [X] Bygg boksidan (läser bokens id ur adressfältet, samma mönster som todo.html)
-  - [X] Del 1: bokens uppgifter med en tillbaka-länk
-  - [X] Del 2: formulär för en ny review
-  - [X] Del 3: lista med bokens reviews
-- [X] När en ny review sparats: hämta boken igen med tillhörande reviews så listan uppdateras
+- [x] Bygg boksidan (läser bokens id ur adressfältet, samma mönster som todo.html)
+  - [x] Del 1: bokens uppgifter med en tillbaka-länk
+  - [x] Del 2: formulär för en ny review
+  - [x] Del 3: lista med bokens reviews
+- [x] När en ny review sparats: hämta boken igen med tillhörande reviews så listan uppdateras
 
 ---
 
 ## Att tänka på
 
-- [X] Ansvarsområde 2 och 3 måste komma överens om kopplingen mellan bok och review — görs tillsammans
-- [X] Under väntetid: bygg klart API-delarna och bygg klienten med hårdkodad testdata i HTML:en
+- [x] Ansvarsområde 2 och 3 måste komma överens om kopplingen mellan bok och review — görs tillsammans
+- [x] Under väntetid: bygg klart API-delarna och bygg klienten med hårdkodad testdata i HTML:en
