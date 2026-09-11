@@ -102,3 +102,19 @@ export const logout = async (req: Request, res: Response) => {
     res.clearCookie('accessToken')
     res.json({ message: "You are logged out" })
 }
+
+export const status = async (req: Request, res: Response) => {
+    const token = req.cookies.accessToken
+
+    if (!token) {
+        res.json({ authenticated: false })
+        return
+    }
+
+    try {
+        jwt.verify(token, process.env.JWT_SECRET || "")
+        res.json({ authenticated: true })
+    } catch {
+        res.json({ authenticated: false })
+    }
+}
