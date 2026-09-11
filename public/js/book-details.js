@@ -4,6 +4,22 @@ Hämta enskild bok med tillhörande reviews, med GET: http://localhost:3000/api/
 
 const urlParams = new URLSearchParams(window.location.search);
 const bookId = urlParams.get('bookId');
+let authStatusResult = { authenticated: false }; // Default value
+
+async function checkAuthStatus() {
+try {
+    // Kolla om användaren är inloggad
+    const statusResponse = await fetch('http://localhost:3000/api/auth/status', {
+    credentials: 'include'
+    });
+    authStatusResult = await statusResponse.json();
+    console.log('Authentication status:', authStatusResult.authenticated);
+} catch (error) {
+        console.error('Error checking authentication status:', error);
+    }
+}
+
+checkAuthStatus();
 
 async function displayBookDetails(bookId) {
 const bookImgContainer = document.getElementById('bookImg');
@@ -11,7 +27,7 @@ const bookDetailsContainer = document.getElementById('bookDetails');
 const reviewsContainer = document.getElementById('reviews');
 
     try {
-       fetch(`http://localhost:3000/api/books/${bookId}`)
+       await fetch(`http://localhost:3000/api/books/${bookId}`)
             .then(response => response.json())
             .then(data => {
 
@@ -26,6 +42,14 @@ const reviewsContainer = document.getElementById('reviews');
                     <p class="content">${review.content}</p>
                     <p class="rAuthor">Av: ${review.name}</p>
                     <p class="rDate">Skapad: ${new Date(review.created_at).toLocaleString("sv-SE", {dateStyle: "short", timeStyle: "short"})}</p>
+                    ${authStatusResult.authenticated ? `
+                                <button class="editReview" data-review-id="${review._id}">
+                                    Edit
+                                </button>
+                                <button class="deleteReview" data-review-id="${review._id}">
+                                    Delete
+                                </button>
+                            ` : ''}
                     </div>`).join('');
 
                 bookImgContainer.innerHTML = `<img src="${data.image}" width="350" alt="${data.title}">`;
