@@ -2,7 +2,7 @@ const createBookForm = document.getElementById('createBookForm');
 
 // Skapa en ny bok
 async function createBook(bookData) {
-  const response = await fetch('http://localhost:4000/api/books', {
+  const response = await fetch('http://localhost:3000/api/books', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
