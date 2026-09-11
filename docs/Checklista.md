@@ -55,7 +55,7 @@
 ### Klient
 
 - [x] Bygg besökarnas boklista, där varje bok länkar vidare till sin egen sida (bokens id i adressfältet)
-- [ ] Bygg listan över böcker i adminpanelen
+- [x] Bygg listan över böcker i adminpanelen
 - [ ] Bygg formuläret för att skapa en ny bok
   - [ ] Hantera att `genres` är en array i databasen men ett textfält i formuläret — dela upp texten innan den sparas
 
