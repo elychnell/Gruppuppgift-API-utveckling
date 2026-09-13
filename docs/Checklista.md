@@ -44,7 +44,7 @@
 - [x] Bygg endpointen som hämtar en enskild bok med tillhörande reviews (samma mönster som todos/subtasks)
 - [x] Kontrollera att skapa, uppdatera och radera ligger bakom `verifyToken`
 - [x] Vid radering av en bok: radera även bokens reviews (MongoDB gör inte detta automatiskt)
-- [x] Skapa en knapp för delete i adminpanelen
+- [x] Skapa en knapp för delete i adminpanelen -[ ] Ladda om sida automatiskt vid edit
 - [ ] Om separat adminsida för bokhantering: lägg till skyddad route, med rätt ordning
   ```
   router.get('/', fetchAllBooks)               // öppen
