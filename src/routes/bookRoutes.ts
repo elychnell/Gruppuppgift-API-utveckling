@@ -6,7 +6,7 @@ import {
   updateBook,
   deleteBook,
 } from '../controllers/bookController';
-import { verifyToken } from '../middleware/verifyToken';
+import { verifyToken } from '../middleware/verifyToken.js';
 const router = express.Router();
 
 router.get('/', getAllBooks);
