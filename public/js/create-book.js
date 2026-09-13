@@ -27,7 +27,10 @@ createBookForm.addEventListener('submit', async (event) => {
     title: document.getElementById('title').value,
     description: document.getElementById('description').value,
     author: document.getElementById('author').value,
-    genres: document.getElementById('genres').value.split(','),
+    genres: document
+      .getElementById('genres')
+      .value.split(',')
+      .map((genre) => genre.trim()),
     published_year: parseInt(document.getElementById('published_year').value),
     image: document.getElementById('image').value,
     thumbnail: document.getElementById('thumbnail').value,

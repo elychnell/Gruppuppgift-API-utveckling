@@ -45,7 +45,6 @@
 - [x] Kontrollera att skapa, uppdatera och radera ligger bakom `verifyToken`
 - [x] Vid radering av en bok: radera även bokens reviews (MongoDB gör inte detta automatiskt)
 - [x] Skapa en knapp för delete i adminpanelen
-- [ ]verify token för delete-funktionen
 - [ ] Om separat adminsida för bokhantering: lägg till skyddad route, med rätt ordning
   ```
   router.get('/', fetchAllBooks)               // öppen
@@ -59,7 +58,7 @@
 - [x] Bygg besökarnas boklista, där varje bok länkar vidare till sin egen sida (bokens id i adressfältet)
 - [x] Bygg listan över böcker i adminpanelen
 - [x] Bygg formuläret för att skapa en ny bok
-  - [ ] Hantera att `genres` är en array i databasen men ett textfält i formuläret — dela upp texten innan den sparas
+- [x] Hantera att `genres` är en array i databasen men ett textfält i formuläret — dela upp texten innan den sparas
 
 ---
 
