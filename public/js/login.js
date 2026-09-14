@@ -1,41 +1,30 @@
-// 1. Create an addEventlistener for the login button on click. The buttons ID is "#login-btn"
-document
-  .getElementById('login-btn')
-  .addEventListener('click', function (event) {
-    event.preventDefault();
-    // 2. SHould make a POST request to API_URL + "/auth/login",
-    // with a body of {username: "username", password: "password"}. login credentials should be hardcoded.
-    // And include "credentials: "include"
+document.getElementById("login-btn").addEventListener("click", async function (e) {
+    e.preventDefault()
+    const username = document.getElementById("username").value
+    const password = document.getElementById("password").value
+    const messageEl = document.getElementById("login-message")
 
-    // 3. Use async/await and try/catch to handle the response and any errors that may occur. If the response is successful, console log the data returned from the server.
-    async function login() {
-      try {
-        const response = await fetch(API_URL + '/auth/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            username: 'admin',
-            password: '123',
-          }),
-          credentials: 'include',
-        });
-        const data = await response.json();
-        // 4 On success, redirect to protected.html. On failure display an error message in #login-message
+    try {
+        const response = await fetch('/api/auth/login', {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            credentials: "include",
+            body: JSON.stringify({ username, password })
+        })
         if (response.ok) {
-          window.location.href = 'protected.html';
+            messageEl.textContent = 'Login successful!';
+            messageEl.className = 'text-success';
+
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1000);
         } else {
-          // 5. Make the error message display in a red fashioned label. Use bootstraps classes
-          document.getElementById('login-message').className =
-            'alert alert-danger';
-          document.getElementById('login-message').innerHTML =
-            'Login failed. Please check your credentials';
+            messageEl.textContent = 'Login failed. Please check your username and password.';
+            messageEl.className = 'text-danger';
         }
-        console.log(data);
-      } catch (error) {
-        console.error('Error:', error);
-      }
+    } catch (error) {
+        console.error(error)
+        messageEl.textContent = 'Something went wrong. Please try again later.';
+        messageEl.className = 'text-danger';
     }
-    login();
-  });
+})
