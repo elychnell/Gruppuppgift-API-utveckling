@@ -26,28 +26,53 @@
 }
 
 /* BOOK DETAILS */
+
 .bdContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Book details page */
-
 .bdContainer .detailsBox {
   display: flex;
   flex-direction: row;
-  gap: 5px;
+  gap: 20px;
 }
 
 .bdContainer .detailsBox .bookImg {
-  border: 1px solid #ff0000;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .bdContainer .detailsBox .bookDetails {
   width: 500px;
-  border: 1px solid #ff0000;
-  padding-left: 10px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.bdContainer .detailsBox .bookDetails .detailsTop {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bdContainer .detailsBox .bookDetails .back-button {
+  margin-right: 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.bdContainer .detailsBox .bookDetails .back-button:hover {
+  background-color: #555;
 }
 
 .bdContainer .detailsBox .bookDetails .genres {
@@ -57,42 +82,63 @@
 }
 
 .bdContainer .detailsBox .bookDetails .genres .genre {
-  border: 1px solid #ff0000;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 2px 6px;
+  padding: 3px 7px;
+  background: #f5f5f5;
 }
 
-/* Reviews */
+
+/* REVIEWS */
+
 .bdContainer .reviews {
-  margin-top: 5px;
+  margin-top: 20px;
   width: 700px;
-  border: 1px solid #ff0000;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .bdContainer .reviews .review {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ddd;
   padding: 15px;
   text-align: center;
 }
+
+.bdContainer .reviews .review:last-child {
+  border-bottom: none;
+}
+
 .bdContainer .reviews .review .content {
   margin: 0 auto;
   max-width: 600px;
 }
 
 /* Review Form */
+
 .bdContainer .addReview .reviewForm {
-  margin-top: 5px;
+  margin: 0 auto;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  border: 1px solid #ff0000;
-  padding: 10px;
+  align-items: stretch;
+  gap: 0.75rem;
   width: 600px;
+  max-width: 90%;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
 }
 
 .bdContainer .addReview .reviewForm h3 {
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .bdContainer .addReview .reviewForm .rating-group {
@@ -100,6 +146,8 @@
   flex-direction: column;
   align-items: center;
 }
+
+/* STJÄRNOR */
 
 .bdContainer .addReview .reviewForm .rating {
   display: flex;
@@ -119,12 +167,103 @@
 }
 
 /* Hover + alla stjärnor till vänster om den */
+
 .bdContainer .addReview .reviewForm .rating label:hover,
 .bdContainer .addReview .reviewForm .rating label:hover ~ label {
   color: gold;
 }
 
 /* Vald stjärna + alla stjärnor till vänster */
+
 .bdContainer .addReview .reviewForm .rating input:checked ~ label {
+  color: gold;
+}
+
+/* DIALOG STYLES */
+
+dialog {
+  width: 400px;
+  max-width: 90%;
+  padding: 2rem;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#editReviewForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+#editReviewForm h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+#editReviewText {
+  min-height: 120px;
+  padding: 0.75rem;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#editRating {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#editReviewForm button {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#editReviewForm button[type="submit"] {
+  margin-top: 0.5rem;
+}
+
+#cancelEdit {
+  background: #ddd;
+}
+
+#editReviewForm .editRating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+#editReviewForm .editRating input {
+  display: none;
+}
+
+#editReviewForm .editRating label {
+  font-size: 2rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+/* Hover + alla stjärnor till vänster */
+
+#editReviewForm .editRating label:hover,
+#editReviewForm .editRating label:hover ~ label {
+  color: gold;
+}
+
+/* Vald stjärna + alla stjärnor till vänster */
+
+#editReviewForm .editRating input:checked ~ label {
   color: gold;
 }
