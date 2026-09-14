@@ -24,7 +24,7 @@ export const login = async (req: Request, res: Response) => {
         }
 
         const token = jwt.sign(
-            { username: user.username },
+            { username: user.username, is_admin: user.is_admin, id: user._id },
             process.env.JWT_SECRET || "",
             { expiresIn: '7d' }
         )
@@ -75,7 +75,7 @@ export const register = async (req: Request, res: Response) => {
             res.status(409).json({ message: 'Username is already taken' })
             return
         }
-        
+
         const hashedPassword = await bcrypt.hash(password, 10)
 
         const newUser = new User({
@@ -112,8 +112,11 @@ export const status = async (req: Request, res: Response) => {
     }
 
     try {
-        jwt.verify(token, process.env.JWT_SECRET || "")
-        res.json({ authenticated: true })
+        const decoded = jwt.verify(token, process.env.JWT_SECRET || "") as { id: string, username: string, is_admin: boolean }        
+        res.json({
+            authenticated: true,
+            is_admin: decoded.is_admin
+        })
     } catch {
         res.json({ authenticated: false })
     }
