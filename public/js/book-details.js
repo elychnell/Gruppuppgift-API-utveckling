@@ -1,23 +1,10 @@
 /* 
 Hämta enskild bok med tillhörande reviews, med GET: http://localhost:3000/api/books/:id 
 */
+import { checkAuthStatus, authStatusResult } from './auth.js';
 
 const urlParams = new URLSearchParams(window.location.search);
 const bookId = urlParams.get('bookId');
-let authStatusResult = { authenticated: false }; // Default value
-
-async function checkAuthStatus() {
-try {
-    // Kolla om användaren är inloggad
-    const statusResponse = await fetch('http://localhost:3000/api/auth/status', {
-    credentials: 'include'
-    });
-    authStatusResult = await statusResponse.json();
-    console.log('Authentication status:', authStatusResult.authenticated);
-} catch (error) {
-        console.error('Error checking authentication status:', error);
-    }
-}
 
 checkAuthStatus();
 
