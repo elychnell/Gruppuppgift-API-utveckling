@@ -188,10 +188,13 @@
   border-radius: var(--radius-small);
   padding: 3px 7px;
 
+<<<<<<< HEAD
   background: var(--color-genre-bg);
   color: var(--color-text-muted);
 }
 
+=======
+>>>>>>> dcda7122675299ac0821f240987f8a8c66f2f8ad
 /* REVIEWS */
 
 .bdContainer .reviews {
@@ -351,7 +354,7 @@ dialog::backdrop {
   font-size: 1rem;
 }
 
-#editReviewForm button[type="submit"] {
+#editReviewForm button[type='submit'] {
   margin-top: 0.5rem;
 }
 
@@ -387,5 +390,10 @@ dialog::backdrop {
 /* Vald stjärna + alla stjärnor till vänster */
 
 #editReviewForm .editRating input:checked ~ label {
+<<<<<<< HEAD
   color: var(--color-star);
 }
+=======
+  color: gold;
+}
+>>>>>>> dcda7122675299ac0821f240987f8a8c66f2f8ad
