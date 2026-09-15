@@ -6,13 +6,14 @@ import {
   updateBook,
   deleteBook,
 } from '../controllers/bookController';
-import { verifyToken } from '../middleware/verifyToken.js';
+
+import { verifyAdmin } from '../middleware/auth';
 const router = express.Router();
 
 router.get('/', getAllBooks);
 router.get('/:id', getBookById);
-router.post('/', verifyToken, createBook);
-router.patch('/:id', verifyToken, updateBook);
-router.delete('/:id', verifyToken, deleteBook);
+router.post('/', verifyAdmin, createBook);
+router.patch('/:id', verifyAdmin, updateBook);
+router.delete('/:id', verifyAdmin, deleteBook);
 
 export default router;
