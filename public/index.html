@@ -13,115 +13,43 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-<nav class="navbar navbar-light bg-white shadow-sm mb-3">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
-      <span class="navbar-brand mb-0">Book API</span>
-      <div>
-        <a href="login.html" id="login-link" class="btn btn-outline-secondary">Login &rarr;</a>
-        <button id="logout-btn" class="btn btn-outline-danger" style="display: none;">Logout</button>
+    <nav class="navbar navbar-light bg-white shadow-sm mb-3">
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center"
+      >
+        <span class="navbar-brand mb-0">Book API</span>
+        <div>
+          <a href="login.html" id="login-link" class="btn btn-outline-secondary"
+            >Login &rarr;</a
+          >
+          <button
+            id="logout-btn"
+            class="btn btn-outline-danger"
+            style="display: none"
+          >
+            Logout
+          </button>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-<nav class="navbar navbar-light bg-light mb-4" id="admin-nav" style="display: none; border-left: 4px solid #0d6efd;">
-  <div class="container-fluid d-flex justify-content-between align-items-center">
-    <span class="navbar-text fw-semibold"> Admin Tools</span>
-    <a href="admin-users.html" class="btn btn-primary">Manage Users</a>
-    <a href="admin-books.html" class="btn btn-primary ms-2">Manage Books</a>
-  </div>
-</nav>
-   
+    <nav
+      class="navbar navbar-light bg-light mb-4"
+      id="admin-nav"
+      style="display: none; border-left: 4px solid #0d6efd"
+    >
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center"
+      >
+        <span class="navbar-text fw-semibold"> Admin Tools</span>
+        <a href="admin-users.html" class="btn btn-primary">Manage Users</a>
+        <a href="admin-books.html" class="btn btn-primary ms-2">Manage Books</a>
+      </div>
+    </nav>
+
     <!-- Main page with book listings -->
     <h1 class="text-center mb-4">Book List</h1>
     <div id="bookList"></div>
-
-    <!-- Admin book list, move to admin page later on-->
-    <h1 class="text-center mb-4">AdminBook List</h1>
-    <div id="adminBookList">
-      <script src="js/startpage.js"></script>
-
-      <script>
-        displayBooks();
-        displayBooksToAdmin();
-      </script>
-    </div>
-
-    <!--Form to post a new book, move to admin page later on and apply verifyToken-->
-
-    <h1 class="text-center mb-4">Add New Book</h1>
-    <form id="createBookForm" class="mb-4">
-      <div class="mb-3">
-        <label for="image" class="form-label">Image URL</label>
-        <input
-          type="text"
-          class="form-control"
-          id="image"
-          name="image"
-          required
-        />
-      </div>
-      <div class="mb-3">
-        <label for="thumbnail" class="form-label">Thumbnail URL</label>
-        <input
-          type="text"
-          class="form-control"
-          id="thumbnail"
-          name="thumbnail"
-          required
-        />
-      </div>
-      <div class="mb-3">
-        <label for="title" class="form-label">Title</label>
-        <input
-          type="text"
-          class="form-control"
-          id="title"
-          name="title"
-          required
-        />
-      </div>
-      <div class="mb-3">
-        <label for="description" class="form-label">Description</label>
-        <textarea
-          class="form-control"
-          id="description"
-          name="description"
-          required
-        ></textarea>
-      </div>
-      <div class="mb-3">
-        <label for="author" class="form-label">Author</label>
-        <input
-          type="text"
-          class="form-control"
-          id="author"
-          name="author"
-          required
-        />
-      </div>
-      <div class="mb-3">
-        <label for="genres" class="form-label">Genres</label>
-        <input
-          type="text"
-          class="form-control"
-          id="genres"
-          name="genres"
-          required
-        />
-      </div>
-      <div class="mb-3">
-        <label for="published_year" class="form-label">Published Year</label>
-        <input
-          type="number"
-          min="0"
-          class="form-control"
-          id="published_year"
-          name="published_year"
-          required
-        />
-      </div>
-      <button type="submit" class="btn btn-primary">Add Book</button>
-    </form>
 
     <script>
       src =
@@ -131,7 +59,6 @@
       crossorigin = 'anonymous';
     </script>
     <script type="module" src="js/functions.js"></script>
-    <script src="js/create-book.js"></script>
-    <script src="js/delete-book.js"></script>
+    <script src="js/startpage.js"></script>
   </body>
 </html>
