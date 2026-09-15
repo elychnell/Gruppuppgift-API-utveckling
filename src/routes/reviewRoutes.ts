@@ -1,13 +1,13 @@
 import express from 'express'
-import { verifyToken } from '../middleware/verifyToken'
+import { verifyAdmin } from '../middleware/verifyAdmin'
 import { getAllReviews, getReviewById, createReview, updateReview, deleteReview } from '../controllers/reviewController'
 
 const router = express.Router()
 
-router.get('/', verifyToken, getAllReviews)
-router.get('/:id', verifyToken, getReviewById)
+router.get('/', verifyAdmin, getAllReviews)
+router.get('/:id', verifyAdmin, getReviewById)
 router.post('/', createReview)
-router.patch('/:id', verifyToken ,updateReview)
-router.delete('/:id', verifyToken, deleteReview)
+router.patch('/:id', verifyAdmin, updateReview)
+router.delete('/:id', verifyAdmin, deleteReview)
 
 export default router
