@@ -1,5 +1,5 @@
 import express from 'express'
-import { verifyAdmin } from '../middleware/verifyAdmin'
+import { verifyAdmin } from '../middleware/auth'
 import { getAllReviews, getReviewById, createReview, updateReview, deleteReview } from '../controllers/reviewController'
 
 const router = express.Router()
