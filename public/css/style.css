@@ -133,11 +133,11 @@
 }
 /* Title text */
 .title {
-    text-align: center;
-    font-size: 2.25rem;
-    font-weight: 600;
-    margin-top: 20px;
-    margin-bottom: -5px;
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: -5px;
 }
 
 /* BOOKS STARTPAGE */
@@ -152,7 +152,6 @@
 
   padding: 20px 0;
 }
-
 
 /* BOOK CARD */
 
@@ -225,14 +224,120 @@
   font-size: 0.9rem;
 }
 
+/* ADMIN PAGE*/
+
 /* admin BookList*/
 #adminBookList {
+  width: min(var(--content-width), 90%);
+  margin: 0 auto;
+
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: var(--card-gap);
+
+  padding: 20px 0;
+}
+
+/* admin Book Card */
+
+#adminBookList .book {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-card);
   padding: 20px;
-  border: 1px solid #ff0000;
+
+  overflow: hidden;
+}
+
+#adminBookList .book a {
+  display: flex;
+  gap: 20px;
+
   height: 100%;
+
+  padding: 20px;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+#adminBookList .bookInfo {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+#adminBookList .bookInfo h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  color: var(--color-text);
+}
+
+#adminBookList .bookInfo p {
+  margin-top: 0;
+
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+#adminBookList .genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+#adminBookList .genre {
+  padding: 3px7px;
+
+  background: var(--color-genre-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/*form*/
+
+#createBookForm {
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  gap: 0.75rem;
+
+  width: 600px;
+  max-width: 90%;
+
+  padding: 2rem;
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+
+  box-shadow: var(--shadow-form);
+
+  box-sizing: border-box;
+}
+
+.formControl {
+  width: 95%;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+
+  font-family: inherit;
+  font-size: 1rem;
+
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-small);
+}
+
+.formContainer {
+  width: 100%;
 }
 
 /* BOOK DETAILS */
