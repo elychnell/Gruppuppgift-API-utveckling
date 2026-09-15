@@ -59,6 +59,9 @@
 - [x] Bygg listan över böcker i adminpanelen
 - [x] Bygg formuläret för att skapa en ny bok
 - [x] Hantera att `genres` är en array i databasen men ett textfält i formuläret — dela upp texten innan den sparas
+- [ ] Array i genres admin-books
+- [ ] Pop-up ruta för edit i admin-books
+- [ ] Felmeddelande vid missad ruta/fel text i Add-Book-Formulär
 
 ---
 
