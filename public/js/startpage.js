@@ -1,5 +1,4 @@
 const bookListContainer = document.getElementById('bookList');
-const adminBookListContainer = document.getElementById('adminBookList');
 
 // Hämta böcker från API
 async function getBooks() {
@@ -18,38 +17,26 @@ async function getBooks() {
 function renderBooks(books, container) {
   const booksHTML = books
     .map(
-      (book) => `
-        <div class="book">
-          <a href="book-details.html?bookId=${book.id}">
-            <img src="${book.image}" alt="${book.title}" width="200">
-            <h3>${book.title}</h3>
-            <p>${book.description}</p>. 
-            <p>Author: ${book.author}</p>
-            <p>Genres: ${book.genres.join(', ')}</p>
-            <p>Published Year: ${book.published_year}</p>
-            
-          </a>
-        </div>
-      `,
-    )
-    .join('');
+      (book) => {
+        const genresHTML = book.genres
+          .map(genre => `<span class="genre">${genre}</span>`)
+          .join('');
 
-  container.innerHTML = booksHTML;
-}
-
-// Visa adminlistan
-function renderAdminBooks(books, container) {
-  const booksHTML = books
-    .map(
-      (book) => `
-        <div class="book">
-          <h3>${book.title}</h3>
-          <p>Author: ${book.author}</p>
-          <p>Genres: ${book.genres.join(', ')}</p>
-          <p>Published Year: ${book.published_year}</p>
-          <button id="deleteButton" data-book-id="${book.id}">delete</button>
-        </div>
-      `,
+        return `
+          <div class="book">
+            <a href="book-details.html?bookId=${book.id}">
+              <img src="${book.image}" alt="${book.title}" width="300">
+              <div class="bookInfo">
+                <h3>${book.title}</h3>
+                <p>${book.description}</p>
+                <div class="genres">
+                  ${genresHTML}
+                </div>
+              </div>
+            </a>
+          </div>
+        `;
+      },
     )
     .join('');
 
@@ -62,14 +49,10 @@ async function displayBooks() {
     const books = await getBooks();
 
     renderBooks(books, bookListContainer);
-    renderAdminBooks(books, adminBookListContainer);
   } catch (error) {
     console.error('Error displaying books:', error);
 
     bookListContainer.innerHTML =
-      '<p class="error">Error loading books. Please try again later.</p>';
-
-    adminBookListContainer.innerHTML =
       '<p class="error">Error loading books. Please try again later.</p>';
   }
 }
