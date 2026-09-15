@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Books</title>
+  </head>
+</html>
+<body>
+  <!-- Admin book list-->
+  <h1 class="text-center mb-4">AdminBooks</h1>
+  <div id="adminBookList"></div>
+
+  <!--Form to post a new book-->
+
+  <h1 class="text-center mb-4">Add New Book</h1>
+  <form id="createBookForm" class="mb-4">
+    <div class="mb-3">
+      <label for="image" class="form-label">Image URL</label>
+      <input
+        type="text"
+        class="form-control"
+        id="image"
+        name="image"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="thumbnail" class="form-label">Thumbnail URL</label>
+      <input
+        type="text"
+        class="form-control"
+        id="thumbnail"
+        name="thumbnail"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        name="title"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea
+        class="form-control"
+        id="description"
+        name="description"
+        required
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="author" class="form-label">Author</label>
+      <input
+        type="text"
+        class="form-control"
+        id="author"
+        name="author"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="genres" class="form-label">Genres</label>
+      <input
+        type="text"
+        class="form-control"
+        id="genres"
+        name="genres"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="published_year" class="form-label">Published Year</label>
+      <input
+        type="number"
+        min="0"
+        class="form-control"
+        id="published_year"
+        name="published_year"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Add Book</button>
+  </form>
+
+  <script src="js/admin-books.js"></script>
+  <script src="js/create-book.js"></script>
+  <script src="js/delete-book.js"></script>
+</body>

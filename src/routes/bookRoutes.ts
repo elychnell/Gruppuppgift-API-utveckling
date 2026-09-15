@@ -6,7 +6,7 @@ import {
   updateBook,
   deleteBook,
 } from '../controllers/bookController';
-import { verifyToken } from '../middleware/verifyToken.js';
+
 import { verifyAdmin } from '../middleware/auth';
 const router = express.Router();
 
