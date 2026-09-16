@@ -19,8 +19,10 @@ document.addEventListener('click', async (event) => {
     try {
       await deleteBook(bookId);
       console.log(`Book with ID ${bookId} deleted successfully.`);
-      // Optionally, you can remove the deleted book from the DOM or refresh the list
-      displayBooksToAdmin(); // Refresh the book list after deletion
+
+      displayBooksToAdmin(); // Refresh the admin book list after deletion
+      //refresh startpage book list to show the updated list after deletion
+      displayBooks();
     } catch (error) {
       console.error(`Error deleting book with ID ${bookId}:`, error);
     }
