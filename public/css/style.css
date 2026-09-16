@@ -252,18 +252,6 @@
   overflow: hidden;
 }
 
-#adminBookList .book a {
-  display: flex;
-  gap: 20px;
-
-  height: 100%;
-
-  padding: 20px;
-
-  color: inherit;
-  text-decoration: none;
-}
-
 #adminBookList .bookInfo {
   display: flex;
   flex-direction: column;
@@ -304,7 +292,7 @@
 
 /*form*/
 
-#createBookForm {
+.book-form {
   margin: 0 auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -340,6 +328,12 @@
 
 .formContainer {
   width: 100%;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text);
 }
 
 /* BOOK DETAILS */
@@ -499,13 +493,13 @@
 /* Hover + alla stjärnor till vänster om den */
 
 .bdContainer .addReview .reviewForm .rating label:hover,
-.bdContainer .addReview .reviewForm .rating label:hover~label {
+.bdContainer .addReview .reviewForm .rating label:hover ~ label {
   color: var(--color-star);
 }
 
 /* Vald stjärna + alla stjärnor till vänster */
 
-.bdContainer .addReview .reviewForm .rating input:checked~label {
+.bdContainer .addReview .reviewForm .rating input:checked ~ label {
   color: var(--color-star);
 }
 
@@ -598,13 +592,13 @@ dialog::backdrop {
 /* Hover + alla stjärnor till vänster */
 
 #editReviewForm .editRating label:hover,
-#editReviewForm .editRating label:hover~label {
+#editReviewForm .editRating label:hover ~ label {
   color: var(--color-star);
 }
 
 /* Vald stjärna + alla stjärnor till vänster */
 
-#editReviewForm .editRating input:checked~label {
+#editReviewForm .editRating input:checked ~ label {
   color: var(--color-star);
 }
 
