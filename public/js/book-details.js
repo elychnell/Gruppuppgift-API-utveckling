@@ -26,7 +26,7 @@ const reviewsContainer = document.getElementById('reviews');
                     <p class="content">${review.content}</p>
                     <p class="rAuthor">Av: ${review.name}</p>
                     <p class="rDate">Skapad: ${new Date(review.created_at).toLocaleString("sv-SE", {dateStyle: "short", timeStyle: "short"})}</p>
-                    ${authStatusResult.authenticated ? `
+                    ${authStatusResult.is_admin ? `
                                 <button class="editReview" onclick="editReview('${review._id}')">
                                     Edit
                                 </button>

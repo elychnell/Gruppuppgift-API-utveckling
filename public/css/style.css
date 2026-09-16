@@ -323,7 +323,19 @@ h1,
   line-height: 1.5;
 }
 
-.genre {
+#bookList .bookInfo .rating {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+#bookList .bookInfo .genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+#bookList .genre {
   background: var(--color-accent-bg);
   color: var(--color-accent-text);
   border: none;

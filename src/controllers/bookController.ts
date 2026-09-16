@@ -5,7 +5,7 @@ import review from '../models/reviewModel';
 // GET /api/books
 export const getAllBooks = async (req: Request, res: Response) => {
   try {
-    const result = await book.find();
+    const result = await book.find().populate('reviews');
     res.json(result);
   } catch (error: unknown) {
     const message = error instanceof Error ? error.message : 'Unknown error';

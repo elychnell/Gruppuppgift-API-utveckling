@@ -22,6 +22,22 @@ function renderBooks(books, container) {
           .map(genre => `<span class="genre">${genre}</span>`)
           .join('');
 
+        const reviews = book.reviews || [];
+        console.log(book.title, book.reviews);
+        let totalRating = 0;
+
+        for (const review of reviews) {
+        totalRating += review.rating;
+        }
+
+        const averageRating = reviews.length > 0
+        ? Math.round(totalRating / reviews.length)
+        : 0;
+
+        const ratingHTML = reviews.length > 0
+        ? `<p class="rating">Rating: <span class="stars">${'★'.repeat(averageRating)}${'☆'.repeat(5 - averageRating)}</span></p>`
+        : '';
+
         return `
           <div class="book">
             <a href="book-details.html?bookId=${book.id}">
@@ -32,6 +48,7 @@ function renderBooks(books, container) {
                 <div class="genres">
                   ${genresHTML}
                 </div>
+                ${ratingHTML}
               </div>
             </a>
           </div>
