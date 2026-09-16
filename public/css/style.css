@@ -354,6 +354,24 @@ h1,
 }
 
 /* admin Book Card */
+.back-button-container {
+  text-align: right;
+}
+
+.back-button-container .back-button {
+  margin-right: 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  text-decoration: none;
+  border-radius: var(--radius-small);
+}
+
+.back-button-container .back-button:hover {
+  background-color: var(--color-primary-hover);
+}
 
 #adminBookList .book {
   background: var(--color-surface);
