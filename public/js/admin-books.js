@@ -33,7 +33,7 @@ function renderAdminBooks(books, container) {
           </button>
            
 <a
- class="btn btn-primary delete-button"
+  class="btn btn-primary"
   href="edit-books.html?id=${book.id}"
 >
   edit
