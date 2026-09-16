@@ -11,6 +11,59 @@
     <h1 class="title">Admin Panel</h1>
     <div id="adminBookList"></div>
 
+    <!--Edit book form-->
+    <section id="edit-book-section" style="display: none">
+      <h2>Edit book</h2>
+
+      <form id="edit-book-form">
+        <input type="hidden" id="edit-book-id" />
+
+        <div>
+          <label for="edit-title">Title</label>
+          <input type="text" id="edit-title" required />
+        </div>
+
+        <div>
+          <label for="edit-author">Author</label>
+          <input type="text" id="edit-author" required />
+        </div>
+
+        <div>
+          <label for="edit-description">Description</label>
+          <textarea id="edit-description" required></textarea>
+        </div>
+
+        <div>
+          <label for="edit-genres">Genres</label>
+          <input
+            type="text"
+            id="edit-genres"
+            placeholder="Fantasy, Adventure"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="edit-published-year">Published Year</label>
+          <input
+            type="number"
+            id="edit-published-year"
+            min="1900"
+            max="2028"
+            required
+          />
+        </div>
+
+        <button type="submit">Save changes</button>
+        <button type="button" id="cancel-edit">Cancel</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Books</h2>
+      <div id="adminBookList"></div>
+    </section>
+
     <!--Form to post a new book-->
 
     <h1 class="title">Add New Book</h1>
