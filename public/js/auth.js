@@ -2,7 +2,7 @@ export let authStatusResult = { authenticated: false };
 
 export async function checkAuthStatus() {
     try {
-        const statusResponse = await fetch('http://localhost:3000/api/auth/status', {
+        const statusResponse = await fetch('/api/auth/status', {
             credentials: 'include'
         });
         authStatusResult = await statusResponse.json();
