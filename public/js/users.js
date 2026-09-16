@@ -27,20 +27,23 @@ async function fetchUsers() {
                 const row = document.createElement("tr");
 
                 const role = user.is_admin
-                    ? '<span class="badge bg-primary">Admin</span>'
-                    : '<span class="badge bg-secondary">User</span>';
+                    ? '<span class="badge badge-admin">Admin</span>'
+                    : '<span class="badge badge-user">User</span>';
 
                 const date = new Date(user.created_at).toLocaleDateString('sv-SE');
 
                 row.innerHTML = `
-                    <td class="ps-4">${user.username}</td>
-                    <td>${role}</td>
-                    <td class="pe-4">${date}</td>
-                      <td class="pe-4">
-                        <button class="btn btn-sm btn-outline-secondary edit-btn" data-id="${user._id}" data-username="${user.username}" data-is-admin="${user.is_admin}"> Edit </button>
-                        <button class="btn btn-sm btn-outline-danger delete-btn" data-id="${user._id}"> Delete </button>                   
+                    <td>${user.username}</td>
+                    <td><span class="badge ${user.is_admin ? 'badge-admin' : 'badge-user'}">${user.is_admin ? 'Admin' : 'User'}</span></td>
+                    <td>${date}</td>
+                    <td>
+                        <div class="admin-nav-actions">
+                            <button class="btn btn-sm btn-outline-secondary edit-btn" data-id="${user._id}" data-username="${user.username}" data-is-admin="${user.is_admin}">Edit</button>
+                            <button class="btn btn-sm btn-outline-danger delete-btn" data-id="${user._id}">Delete</button>
+                        </div>
                     </td>
                 `;
+
                 usersTableBody.appendChild(row);
             });
 
@@ -122,7 +125,7 @@ function editUser(userId, username, isAdmin) {
     cancelEditButton.addEventListener("click", () => {
         dialog.close();
     });
-    
+
     dialog.addEventListener("close", () => {
         dialog.remove();
     });
