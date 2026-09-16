@@ -1,35 +1,45 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book API</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-<nav class="navbar">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book API</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container-fluid">
       <span class="navbar-brand mb-0">Book API</span>
       <div>
-        <a href="login.html" id="login-link" class="btn btn-outline-secondary">Login &rarr;</a>
+        <a href="login.html" id="login-link" class="btn btn-primary" >Login &rarr;</a>
         <button id="logout-btn" class="btn btn-outline-danger" style="display: none;">Logout</button>
       </div>
     </div>
   </nav>
 
-<nav class="navbar" id="admin-nav" style="display: none;">
-  <div class="container-fluid d-flex justify-content-between align-items-center">
-    <span class="navbar-text fw-semibold"> Admin Tools</span>
-    <a href="admin-users.html" class="btn btn-primary">Manage Users</a>
-    <a href="admin-books.html" class="btn btn-primary ms-2">Manage Books</a>
+  <nav class="navbar admin-nav" id="admin-nav" style="display: none;">
+  <div class="container-fluid">
+    <span class="navbar-text">Admin Panel</span>
+    <div class="admin-nav-actions">
+      <a href="admin-users.html" class="btn btn-primary">Manage Users</a>
+      <a href="admin-books.html" class="btn btn-primary">Manage Books</a>
+    </div>
   </div>
 </nav>
-   
-    <!-- Main page with book listings -->
-    <h1 class="title">Book List</h1>
-    <div id="bookList"></div>
 
-    <script src="js/startpage.js"></script>
-    <script type="module" src="js/functions.js"></script>
-  </body>
+  <!-- Main page with book listings -->
+  <h1 class="title">Book List</h1>
+  <div id="bookList"></div>
+
+  <script src="js/startpage.js"></script>
+  <script type="module" src="js/functions.js"></script>
+</body>
+
 </html>

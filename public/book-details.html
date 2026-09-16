@@ -1,60 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Details</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <div class="bdContainer">
     <div id="detailsBox" class="detailsBox">
-    <div id="bookImg" class="bookImg"></div>
-   <div id="bookDetails" class="bookDetails"></div>
+      <div id="bookImg" class="bookImg"></div>
+      <div id="bookDetails" class="bookDetails"></div>
     </div>
-   <div id="reviews" class="reviews">
+    <div id="reviews" class="reviews">
 
-   </div>
-   <div id="addReview" class="addReview">
-<form id="reviewForm" class="reviewForm">
-  <h3>Add a Review</h3>
-<div class="form-group rating-group">
-<label for="rating">Your Rating:</label>
+    </div>
+    <div id="addReview" class="addReview">
+      <form id="reviewForm" class="reviewForm">
+        <h3>Add a Review</h3>
+        <div class="form-group rating-group">
+          <label for="rating">Your Rating:</label>
 
-  <div class="rating">
-    <input id="star5" type="radio" name="rating" value="5">
-<label for="star5">★</label>
+          <div class="rating">
+            <input id="star5" type="radio" name="rating" value="5">
+            <label for="star5">★</label>
 
-<input id="star4" type="radio" name="rating" value="4">
-<label for="star4">★</label>
+            <input id="star4" type="radio" name="rating" value="4">
+            <label for="star4">★</label>
 
-<input id="star3" type="radio" name="rating" value="3">
-<label for="star3">★</label>
+            <input id="star3" type="radio" name="rating" value="3">
+            <label for="star3">★</label>
 
-<input id="star2" type="radio" name="rating" value="2">
-<label for="star2">★</label>
+            <input id="star2" type="radio" name="rating" value="2">
+            <label for="star2">★</label>
 
-<input id="star1" type="radio" name="rating" value="1">
-<label for="star1">★</label>
+            <input id="star1" type="radio" name="rating" value="1">
+            <label for="star1">★</label>
+          </div>
+        </div>
+        <textarea id="reviewText" name="reviewText" placeholder="Your Review" required></textarea>
+
+        <input type="text" id="reviewerName" name="reviewerName" placeholder="Your Name" required>
+        <button type="submit">Submit Review</button>
+    </div>
   </div>
-</div>
-<textarea
-    id="reviewText"
-    name="reviewText"
-    placeholder="Your Review"
-    required
-  ></textarea>
-
-  <input
-    type="text"
-    id="reviewerName"
-    name="reviewerName"
-    placeholder="Your Name"
-    required
-  >
-  <button type="submit">Submit Review</button>
-  </div>
-  </div>
-<script type="module" src="js/book-details.js"></script>
+  <script type="module" src="js/book-details.js"></script>
 </body>
+
 </html>
