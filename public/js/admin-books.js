@@ -25,6 +25,7 @@ function renderAdminBooks(books, container) {
           <p>Published Year: ${book.published_year}</p>
 
             <button
+            id="deleteButton"
             class="btn btn-primary delete-button"
             data-book-id="${book.id}"
           >
