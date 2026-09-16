@@ -43,6 +43,29 @@ createBookForm.addEventListener('submit', async (event) => {
     console.error('Error creating book:', error);
   }
 
+  //update the book list after creating a new book
+  try {
+    const response = await fetch('http://localhost:3000/api/books');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const books = await response.json();
+    renderAdminBooks(books, adminBookListContainer);
+  } catch (error) {
+    console.error('Error fetching books:', error);
+  }
+
+  //Show success message
+  const successMessage = document.createElement('p');
+  successMessage.textContent = 'Book created successfully!';
+  successMessage.classList.add('success-message');
+  createBookForm.appendChild(successMessage);
+
+  // Remove the success message after 3 seconds
+  setTimeout(() => {
+    successMessage.remove();
+  }, 3000);
+
   // Clear the form after submission
   createBookForm.reset();
 });

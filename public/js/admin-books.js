@@ -23,10 +23,22 @@ function renderAdminBooks(books, container) {
           <p>Description: ${book.description}</p>
           <span class="genre ">Genres: ${book.genres.join(', ')}</span>
           <p>Published Year: ${book.published_year}</p>
-          <button class="btn, .btn-primary" id="deleteButton" data-book-id="${book.id}">delete</button>
+
+            <button
+            id="deleteButton"
+            class="btn btn-primary delete-button"
+            data-book-id="${book.id}"
+          >
+            delete
+          </button>
            
-        <button class="btn, .btn-primary" id="editButton" data-book-id="${book.id}">edit</button>
-          </div>
+<a
+  class="btn btn-primary"
+  href="edit-books.html?id=${book.id}"
+>
+  edit
+</a>
+        </div>
       `,
     )
     .join('');

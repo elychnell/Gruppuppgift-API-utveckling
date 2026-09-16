@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="css/style.css" />
+
+<!--Form to edit an existing book-->
+<section class="book-form" id="edit-book-section">
+  <h2>Edit book</h2>
+
+  <form id="editBookForm">
+    <input type="hidden" id="edit-book-id" />
+
+    <div>
+      <label class="form-label" for="edit-image">Image URL</label>
+      <input type="text" class="formControl" id="edit-image" required />
+    </div>
+
+    <div>
+      <label class="form-label" for="edit-thumbnail">Thumbnail URL</label>
+      <input type="text" class="formControl" id="edit-thumbnail" required />
+    </div>
+
+    <div>
+      <label class="form-label" for="edit-title">Title</label>
+      <input type="text" class="formControl" id="edit-title" required />
+    </div>
+
+    <div>
+      <label class="form-label" for="edit-author">Author</label>
+      <input type="text" class="formControl" id="edit-author" required />
+    </div>
+
+    <div>
+      <label class="form-label" for="edit-description">Description</label>
+      <textarea class="formControl" id="edit-description" required></textarea>
+    </div>
+
+    <div>
+      <label class="form-label" for="edit-genres">Genres</label>
+      <input
+        type="text"
+        class="formControl"
+        id="edit-genres"
+        placeholder="Fantasy, Adventure"
+        required
+      />
+    </div>
+
+    <div>
+      <label class="form-label" for="edit-published_year">Published Year</label>
+      <input
+        type="number"
+        class="formControl"
+        id="edit-published_year"
+        min="1900"
+        max="2028"
+        required
+      />
+    </div>
+
+    <button class="btn btn-primary btn-primary:hover" type="submit">
+      Save changes
+    </button>
+    <button
+      class="btn btn-secondary btn-secondary:hover"
+      type="button"
+      id="cancel-edit"
+    >
+      Cancel
+    </button>
+  </form>
+</section>
+
+<script src="js/edit-books.js"></script>

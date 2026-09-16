@@ -21,8 +21,18 @@ document.addEventListener('click', async (event) => {
       console.log(`Book with ID ${bookId} deleted successfully.`);
 
       displayBooksToAdmin(); // Refresh the admin book list after deletion
-      //refresh startpage book list to show the updated list after deletion
-      displayBooks();
+
+      // Refresh the public book list after deletion without having to reload the page
+      try {
+        const response = await fetch('http://localhost:3000/api/books');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const books = await response.json();
+        renderBooks(books, bookListContainer);
+      } catch (error) {
+        console.error('Error fetching books:', error);
+      }
     } catch (error) {
       console.error(`Error deleting book with ID ${bookId}:`, error);
     }
