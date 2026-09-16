@@ -11,7 +11,9 @@ export const login = async (req: Request, res: Response) => {
     }
 
     try {
-        const user = await User.findOne({ username })
+        const user = await User.findOne({ 
+            username: { $regex: `^${username}$`, $options: 'i' } })
+            
         if (!user) {
             res.status(401).json({ message: 'Invalid username or password' })
             return
