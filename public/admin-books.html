@@ -1,60 +1,95 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/books.css" />
+    <title>Admin Books</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/books.css">
-  <title>Admin Books</title>
-</head>
+  <body>
+    <!-- Admin book list-->
+    <div class="grid">
+      <div class="back-btn-container">
+        <a href="index.html" id="back-btn" class="btn btn-outline-secondary"
+          >Back</a
+        >
+      </div>
 
-<body>
-  <div class="back-button-container">
-    <a href="index.html" class="back-button back-button:hover">← Tillbaka</a>
-  </div>
+      <h1 class="title">Admin Panel</h1>
+    </div>
+    <div id="adminBookList"></div>
 
-  <!-- Admin book list-->
-  <h1 class="title">Admin Panel</h1>
-  <div id="adminBookList"></div>
+    <!--Form to post a new book-->
 
-  <!--Form to post a new book-->
+    <h1 class="title">Add New Book</h1>
 
-  <h1 class="title">Add New Book</h1>
+    <form class="book-form" id="createBookForm">
+      <label for="image" class="form-label">Image URL</label>
+      <input class="formControl" type="text" id="image" name="image" required />
 
-  <form class="book-form" id="createBookForm">
-    <label for="image" class="form-label">Image URL</label>
-    <input class="formControl" type="text" id="image" name="image" required />
+      <label for="thumbnail" class="form-label">Thumbnail URL</label>
+      <input
+        type="text"
+        class="formControl"
+        id="thumbnail"
+        name="thumbnail"
+        required
+      />
 
-    <label for="thumbnail" class="form-label">Thumbnail URL</label>
-    <input type="text" class="formControl" id="thumbnail" name="thumbnail" required />
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="formControl" id="title" name="title" required />
 
-    <label for="title" class="form-label">Title</label>
-    <input type="text" class="formControl" id="title" name="title" required />
+      <label for="description" class="form-label">Description</label>
+      <textarea
+        class="formControl"
+        id="description"
+        name="description"
+        required
+      ></textarea>
 
-    <label for="description" class="form-label">Description</label>
-    <textarea class="formControl" id="description" name="description" required></textarea>
+      <label for="author" class="form-label">Author</label>
+      <input
+        type="text"
+        class="formControl"
+        id="author"
+        name="author"
+        required
+      />
 
-    <label for="author" class="form-label">Author</label>
-    <input type="text" class="formControl" id="author" name="author" required />
+      <label for="genres" class="form-label">Genres</label>
+      <input
+        type="text"
+        class="formControl"
+        id="genres"
+        name="genres"
+        required
+      />
 
-    <label for="genres" class="form-label">Genres</label>
-    <input type="text" class="formControl" id="genres" name="genres" required />
+      <label for="published_year" class="form-label">Published Year</label>
+      <input
+        type="number"
+        min="0"
+        class="formControl"
+        id="published_year"
+        name="published_year"
+        required
+      />
 
-    <label for="published_year" class="form-label">Published Year</label>
-    <input type="number" min="0" class="formControl" id="published_year" name="published_year" required />
+      <button type="submit" class="btn btn-sm btn-outline-secondary edit-btn">
+        Add Book
+      </button>
+    </form>
+    <script src="js/admin-books.js"></script>
+    <script src="js/create-book.js"></script>
 
-    <button type="submit" class="btn, btn-primary:hover">Add Book</button>
-  </form>
-  <script src="js/admin-books.js"></script>
-  <script src="js/create-book.js"></script>
-
-  <script src="js/delete-book.js"></script>
-</body>
-
+    <script src="js/delete-book.js"></script>
+  </body>
 </html>

@@ -1,4 +1,4 @@
-// function to delete a book with a given bookId
+// Raderar en bok med ett angivet bookId
 async function deleteBook(bookId) {
   const response = await fetch(`/api/books/${bookId}`, {
     method: 'DELETE',
@@ -11,30 +11,40 @@ async function deleteBook(bookId) {
   return await response.json();
 }
 
-// Event listener for delete buttons
+// Event listener för delete-knapparna
 document.addEventListener('click', async (event) => {
-  if (event.target && event.target.id === 'deleteButton') {
+  if (event.target && event.target.classList.contains('delete-btn')) {
     const bookId = event.target.getAttribute('data-book-id');
 
+    // Fråga användaren om bekräftelse innan boken raderas
+    const confirmation = confirm(
+      'Are you sure you want to delete this book? This action cannot be undone.',
+    );
+
+    if (!confirmation) {
+      console.log('Book deletion canceled.');
+      return;
+    }
+
     try {
+      // Radera boken
       await deleteBook(bookId);
+
       console.log(`Book with ID ${bookId} deleted successfully.`);
 
-      displayBooksToAdmin(); // Refresh the admin book list after deletion
+      // Visa bekräftelse efter att boken har raderats
+      showDeleteConfirmation();
 
-      // Refresh the public book list after deletion without having to reload the page
-      try {
-        const response = await fetch('http://localhost:3000/api/books');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const books = await response.json();
-        renderBooks(books, bookListContainer);
-      } catch (error) {
-        console.error('Error fetching books:', error);
-      }
+      // Uppdatera admin-boklistan
+      displayBooksToAdmin();
     } catch (error) {
       console.error(`Error deleting book with ID ${bookId}:`, error);
     }
   }
 });
+
+// Visar en bekräftelseruta efter att boken har raderats
+function showDeleteConfirmation() {
+  alert('Book deleted successfully.');
+}
+
