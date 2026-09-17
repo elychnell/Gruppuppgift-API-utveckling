@@ -24,6 +24,10 @@ const booksSchema = new Schema(
       required: true,
     },
 
+    thumbnail: {
+      type: String,
+      required: true,
+    },
     published_year: {
       type: Number,
       required: true,
