@@ -9,80 +9,52 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/books.css">
   <title>Admin Books</title>
 </head>
-  
-  <body>
-    <div class="back-button-container">
-      <a href="index.html" class="back-button back-button:hover">← Tillbaka</a>
-    </div>
-    
-    <!-- Admin book list-->
-    <h1 class="title">Admin Panel</h1>
-    <div id="adminBookList"></div>
 
-    <!--Form to post a new book-->
+<body>
+  <div class="back-button-container">
+    <a href="index.html" class="back-button back-button:hover">← Tillbaka</a>
+  </div>
 
-    <h1 class="title">Add New Book</h1>
+  <!-- Admin book list-->
+  <h1 class="title">Admin Panel</h1>
+  <div id="adminBookList"></div>
 
-    <form class="book-form" id="createBookForm">
-      <label for="image" class="form-label">Image URL</label>
-      <input class="formControl" type="text" id="image" name="image" required />
+  <!--Form to post a new book-->
 
-      <label for="thumbnail" class="form-label">Thumbnail URL</label>
-      <input
-        type="text"
-        class="formControl"
-        id="thumbnail"
-        name="thumbnail"
-        required
-      />
+  <h1 class="title">Add New Book</h1>
 
-      <label for="title" class="form-label">Title</label>
-      <input type="text" class="formControl" id="title" name="title" required />
+  <form class="book-form" id="createBookForm">
+    <label for="image" class="form-label">Image URL</label>
+    <input class="formControl" type="text" id="image" name="image" required />
 
-      <label for="description" class="form-label">Description</label>
-      <textarea
-        class="formControl"
-        id="description"
-        name="description"
-        required
-      ></textarea>
+    <label for="thumbnail" class="form-label">Thumbnail URL</label>
+    <input type="text" class="formControl" id="thumbnail" name="thumbnail" required />
 
-      <label for="author" class="form-label">Author</label>
-      <input
-        type="text"
-        class="formControl"
-        id="author"
-        name="author"
-        required
-      />
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="formControl" id="title" name="title" required />
 
-      <label for="genres" class="form-label">Genres</label>
-      <input
-        type="text"
-        class="formControl"
-        id="genres"
-        name="genres"
-        required
-      />
+    <label for="description" class="form-label">Description</label>
+    <textarea class="formControl" id="description" name="description" required></textarea>
 
-      <label for="published_year" class="form-label">Published Year</label>
-      <input
-        type="number"
-        min="0"
-        class="formControl"
-        id="published_year"
-        name="published_year"
-        required
-      />
+    <label for="author" class="form-label">Author</label>
+    <input type="text" class="formControl" id="author" name="author" required />
 
-      <button type="submit" class="btn, btn-primary:hover">Add Book</button>
-    </form>
-    <script src="js/admin-books.js"></script>
-    <script src="js/create-book.js"></script>
+    <label for="genres" class="form-label">Genres</label>
+    <input type="text" class="formControl" id="genres" name="genres" required />
 
-    <script src="js/delete-book.js"></script>
-  </body>
+    <label for="published_year" class="form-label">Published Year</label>
+    <input type="number" min="0" class="formControl" id="published_year" name="published_year" required />
+
+    <button type="submit" class="btn, btn-primary:hover">Add Book</button>
+  </form>
+  <script src="js/admin-books.js"></script>
+  <script src="js/create-book.js"></script>
+
+  <script src="js/delete-book.js"></script>
+</body>
+
 </html>

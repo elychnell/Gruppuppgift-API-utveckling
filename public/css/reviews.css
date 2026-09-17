@@ -1,0 +1,180 @@
+/* REVIEWS */
+
+  .bdContainer .reviews {
+    margin-top: var(--card-gap);
+    width: 700px;
+
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-card);
+  }
+
+  .bdContainer .reviews .review {
+    border-bottom: 1px solid var(--color-border);
+    padding: 15px;
+    text-align: center;
+  }
+
+  .bdContainer .reviews .review:last-child {
+    border-bottom: none;
+  }
+
+  .bdContainer .reviews .review .content {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+
+  /* REVIEW FORM */
+
+  .bdContainer .addReview .reviewForm {
+    margin: 0 auto;
+    margin-top: var(--card-gap);
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+
+    width: 600px;
+    max-width: 90%;
+
+    padding: 2rem;
+
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+
+    box-shadow: var(--shadow-form);
+
+    box-sizing: border-box;
+  }
+
+  .bdContainer .addReview .reviewForm h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .bdContainer .addReview .reviewForm .rating-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* STJÄRNOR */
+
+  .bdContainer .addReview .reviewForm .rating {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .bdContainer .addReview .reviewForm .rating input {
+    display: none;
+  }
+
+  .bdContainer .addReview .reviewForm .rating label {
+    font-size: 2rem;
+    color: var(--color-input-border);
+    cursor: pointer;
+    transition: color 0.15s ease;
+  }
+
+  /* Hover + alla stjärnor till vänster om den */
+
+  .bdContainer .addReview .reviewForm .rating label:hover,
+  .bdContainer .addReview .reviewForm .rating label:hover~label {
+    color: var(--color-star);
+  }
+
+  /* Vald stjärna + alla stjärnor till vänster */
+
+  .bdContainer .addReview .reviewForm .rating input:checked~label {
+    color: var(--color-star);
+  }
+
+  /* edit review form */
+  #editReviewForm {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  #editReviewForm h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  #editReviewText {
+    min-height: 120px;
+    padding: 0.75rem;
+
+    resize: vertical;
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    border: 1px solid var(--color-input-border);
+    border-radius: var(--radius-small);
+  }
+
+  #editRating {
+    padding: 0.6rem;
+    font-size: 1rem;
+
+    border: 1px solid var(--color-input-border);
+    border-radius: var(--radius-small);
+  }
+
+  #editReviewForm button {
+    padding: 0.7rem 1rem;
+
+    border: none;
+    border-radius: var(--radius-small);
+
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  #editReviewForm button[type='submit'] {
+    margin-top: 0.5rem;
+  }
+
+  #cancelEdit {
+    background: var(--color-disabled);
+  }
+
+  /* edit review stars */
+  #editReviewForm .editRating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+
+  #editReviewForm .editRating input {
+    display: none;
+  }
+
+  #editReviewForm .editRating label {
+    font-size: 2rem;
+    color: var(--color-input-border);
+    cursor: pointer;
+    transition: color 0.15s ease;
+  }
+
+  /* Hover + alla stjärnor till vänster */
+
+  #editReviewForm .editRating label:hover,
+  #editReviewForm .editRating label:hover~label {
+    color: var(--color-star);
+  }
+
+  /* Vald stjärna + alla stjärnor till vänster */
+
+  #editReviewForm .editRating input:checked~label {
+    color: var(--color-star);
+  }
