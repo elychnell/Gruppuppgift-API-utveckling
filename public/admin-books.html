@@ -1,26 +1,25 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/global.css" />
-    <link rel="stylesheet" href="css/books.css" />
-    <title>Admin Books</title>
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/books.css" />
+  <title>Admin Books</title>
+</head>
+
+<body>
+  <main>
     <!-- Admin book list-->
     <div class="grid">
       <div class="back-btn-container">
-        <a href="index.html" id="back-btn" class="btn btn-outline-secondary"
-          >Back</a
-        >
+        <a href="index.html" id="back-btn" class="btn btn-outline-secondary">Back</a>
       </div>
 
       <h1 class="title">Admin Books</h1>
@@ -33,81 +32,38 @@
 
     <form class="book-form" id="createBookForm">
       <label for="image" class="form-label">Image URL</label>
-      <input
-        placeholder="/images/large-pics/book2-thumb.jpg"
-        class="formControl"
-        type="text"
-        id="image"
-        name="image"
-        required
-      />
+      <input placeholder="/images/large-pics/book2-thumb.jpg" class="formControl" type="text" id="image" name="image"
+        required />
 
       <label for="thumbnail" class="form-label">Thumbnail URL</label>
-      <input
-        placeholder="/images/small-pics/book2-thumb.jpg"
-        type="text"
-        class="formControl"
-        id="thumbnail"
-        name="thumbnail"
-        required
-      />
+      <input placeholder="/images/small-pics/book2-thumb.jpg" type="text" class="formControl" id="thumbnail"
+        name="thumbnail" required />
 
       <label for="title" class="form-label">Title</label>
-      <input
-        placeholder="The Great Gatsby"
-        type="text"
-        class="formControl"
-        id="title"
-        name="title"
-        required
-      />
+      <input placeholder="The Great Gatsby" type="text" class="formControl" id="title" name="title" required />
 
       <label for="description" class="form-label">Description</label>
-      <textarea
-        placeholder="A novel set in the 1920s that explores themes of wealth, love, and the American Dream."
-        class="formControl"
-        id="description"
-        name="description"
-        required
-      ></textarea>
+      <textarea placeholder="A novel set in the 1920s that explores themes of wealth, love, and the American Dream."
+        class="formControl" id="description" name="description" required></textarea>
 
       <label for="author" class="form-label">Author</label>
-      <input
-        placeholder="F. Scott Fitzgerald"
-        type="text"
-        class="formControl"
-        id="author"
-        name="author"
-        required
-      />
+      <input placeholder="F. Scott Fitzgerald" type="text" class="formControl" id="author" name="author" required />
 
       <label for="genres" class="form-label">Genres</label>
-      <input
-        placeholder="Fiction, Classic"
-        type="text"
-        class="formControl"
-        id="genres"
-        name="genres"
-        required
-      />
+      <input placeholder="Fiction, Classic" type="text" class="formControl" id="genres" name="genres" required />
 
       <label for="published_year" class="form-label">Published Year</label>
-      <input
-        placeholder="1925"
-        type="number"
-        min="0"
-        class="formControl"
-        id="published_year"
-        name="published_year"
-        required
-      />
+      <input placeholder="1925" type="number" min="0" class="formControl" id="published_year" name="published_year"
+        required />
 
       <button type="submit" class="btn btn-sm btn-outline-secondary edit-btn">
         Add Book
       </button>
     </form>
-    <script src="js/admin-books.js"></script>
-    <script src="js/create-book.js"></script>
-    <script src="js/delete-book.js"></script>
-  </body>
+  </main>
+  <script src="js/admin-books.js"></script>
+  <script src="js/create-book.js"></script>
+  <script src="js/delete-book.js"></script>
+</body>
+
 </html>
