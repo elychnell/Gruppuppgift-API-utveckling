@@ -24,7 +24,7 @@ document.addEventListener('click', async (event) => {
 
       // Refresh the public book list after deletion without having to reload the page
       try {
-        const response = await fetch('http://localhost:3000/api/books');
+        const response = await fetch('/api/books');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
