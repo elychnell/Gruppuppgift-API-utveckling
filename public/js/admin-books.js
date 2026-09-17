@@ -23,25 +23,36 @@ function renderAdminBooks(books, container) {
 
       return `
         <div class="book">
-          <h3>${book.title}</h3>
-          <p>Author: ${book.author}</p>
-          <p>Description: ${book.description}</p>
-          <p>Genres: ${genresHTML}</p>
-          <p>Published Year: ${book.published_year}</p>
+          <div class="flex-container">
+            <div class="bookImg">
+             <img class= "bookThumbnail" src="${book.thumbnail}" alt="${book.title}">
+            </div>
+            <div>
+             <h3>${book.title}</hs3>
+             <h4>Author:</h4><p> ${book.author}</p>
+           
+          
+          
+          <h4>Published Year:</h4><p> ${book.published_year}</p>
+          <h4>Genres:</h4><p> ${genresHTML}</p>
+          </div>
+           </div> 
+<h4>Description:</h4><p> ${book.description}</p>
+          <a
+            class="btn btn-sm btn-outline-secondary edit-btn"
+            href="edit-books.html?id=${book.id}"
+          >
+            Edit
+          </a>
 
           <button
-            class="btn btn-primary delete-button"
+          id="deleteButton"
+            class="btn btn-sm btn-outline-danger delete-btn"
             data-book-id="${book.id}"
           >
             Delete
           </button>
 
-          <a
-            class="btn btn-primary"
-            href="edit-books.html?id=${book.id}"
-          >
-            Edit
-          </a>
         </div>
       `;
     })

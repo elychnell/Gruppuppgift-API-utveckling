@@ -89,6 +89,13 @@ editBookForm.addEventListener('submit', async (event) => {
     console.error('Error updating book:', error);
   }
 });
+//Bring back user to admin-books.html after clicking cancel button
+const cancelButton = document.getElementById('cancel-edit');
+
+cancelButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  window.location.href = 'admin-books.html';
+});
 
 // Call the function to populate the form when the page loads
 populateForm();

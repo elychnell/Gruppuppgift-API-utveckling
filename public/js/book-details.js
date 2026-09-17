@@ -11,7 +11,7 @@ const bookDetailsContainer = document.getElementById('bookDetails');
 const reviewsContainer = document.getElementById('reviews');
 
     try {
-       await fetch(`http://localhost:3000/api/books/${bookId}`)
+       await fetch(`/api/books/${bookId}`)
             .then(response => response.json())
             .then(data => {
 
@@ -69,7 +69,7 @@ async function submitReview(event) {
     const rating = document.querySelector('input[name="rating"]:checked').value;
     
 try {
-    const response = await fetch(`http://localhost:3000/api/reviews`, {
+    const response = await fetch(`/api/reviews`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -96,7 +96,7 @@ async function deleteReview(reviewId) {
     console.log('Delete review with ID:', reviewId);
  
 try {
-    const response = await fetch(`http://localhost:3000/api/reviews/${reviewId}`, {
+    const response = await fetch(`/api/reviews/${reviewId}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
@@ -153,7 +153,7 @@ dialog.innerHTML = `
     const editRating = dialog.querySelectorAll('input[name="editRating"]');
 
 try {
-    const response = await fetch(`http://localhost:3000/api/reviews/${reviewId}`);
+    const response = await fetch(`/api/reviews/${reviewId}`);
     const reviewData = await response.json();
 
     editReviewText.value = reviewData.content;
@@ -188,7 +188,7 @@ async function updateReview(event,reviewId, dialog) {
         const updatedContent = dialog.querySelector('#editReviewText').value;
         const updatedRating = dialog.querySelector('input[name="editRating"]:checked').value;
     try {
-        const response = await fetch(`http://localhost:3000/api/reviews/${reviewId}`, {
+        const response = await fetch(`/api/reviews/${reviewId}`, {
 
             method: 'PATCH',
             headers: {
