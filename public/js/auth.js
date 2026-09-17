@@ -14,10 +14,33 @@ export async function checkAuthStatus() {
 export async function toggleAdminNav() {
     await checkAuthStatus();
 
-    const adminNav = document.getElementById('admin-nav');
-    if (adminNav) {
-        adminNav.style.display = authStatusResult.is_admin ? 'flex' : 'none';
+    const adminDropdown = document.getElementById('admin-dropdown');
+
+    if (adminDropdown) {
+        if (authStatusResult.authenticated && authStatusResult.is_admin) {
+            adminDropdown.style.display = 'block';
+        } else {
+            adminDropdown.style.display = 'none';
+        }
     }
+}
+
+export function setupAdminDropdown() {
+    const btn = document.getElementById('admin-dropdown-btn');
+    const menu = document.getElementById('admin-dropdown-menu');
+
+    if (!btn || !menu) return;
+
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menu.classList.toggle('open');
+        btn.classList.toggle('open');
+    });
+
+    document.addEventListener('click', () => {
+        menu.classList.remove('open');
+        btn.classList.remove('open');
+    });
 }
 
 export async function toggleLoginButtons() {

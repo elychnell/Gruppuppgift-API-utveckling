@@ -14,25 +14,24 @@
 </head>
 
 <body>
-  <nav class="navbar">
+   <nav class="navbar">
     <div class="container-fluid">
-      <span class="navbar-brand mb-0">Book API</span>
-      <div>
-        <a href="login.html" id="login-link" class="btn btn-primary" >Login &rarr;</a>
+      <span class="navbar-logo mb-0">Book API</span>
+      <div class="nav-actions">
+        <div class="dropdown" id="admin-dropdown" style="display: none;">
+          <button class="btn btn-outline-secondary dropdown-toggle" id="admin-dropdown-btn">Admin Panel <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg></button>
+          <div class="dropdown-menu" id="admin-dropdown-menu">
+            <a href="admin-users.html">Manage Users</a>
+            <a href="admin-books.html">Manage Books</a>
+          </div>
+        </div>
+        <a href="login.html" id="login-link" class="btn btn-primary">Login &rarr;</a>
         <button id="logout-btn" class="btn btn-outline-danger" style="display: none;">Logout</button>
       </div>
     </div>
   </nav>
-
-  <nav class="navbar admin-nav" id="admin-nav" style="display: none;">
-  <div class="container-fluid">
-    <span class="navbar-text">Admin Panel</span>
-    <div class="admin-nav-actions">
-      <a href="admin-users.html" class="btn btn-primary">Manage Users</a>
-      <a href="admin-books.html" class="btn btn-primary">Manage Books</a>
-    </div>
-  </div>
-</nav>
 
   <!-- Main page with book listings -->
   <h1 class="title">Book List</h1>
