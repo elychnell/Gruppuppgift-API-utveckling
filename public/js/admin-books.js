@@ -1,6 +1,6 @@
 const adminBookListContainer = document.getElementById('adminBookList');
 
-// Fetch books from API
+// Hämta böcker från API
 async function getBooks() {
   const response = await fetch('/api/books');
 
@@ -12,41 +12,45 @@ async function getBooks() {
 
   return books;
 }
-// Show admin book list
+
+// Visa admin boklistan
 function renderAdminBooks(books, container) {
   const booksHTML = books
-    .map(
-      (book) => `
+    .map((book) => {
+      const genresHTML = book.genres
+        .map((genre) => `<span class="genre">${genre}</span>`)
+        .join('');
+
+      return `
         <div class="book">
           <h3>${book.title}</h3>
           <p>Author: ${book.author}</p>
           <p>Description: ${book.description}</p>
-          <span class="genre ">Genres: ${book.genres.join(', ')}</span>
+          <p>Genres: ${genresHTML}</p>
           <p>Published Year: ${book.published_year}</p>
 
-            <button
-            id="deleteButton"
+          <button
             class="btn btn-primary delete-button"
             data-book-id="${book.id}"
           >
-            delete
+            Delete
           </button>
-           
-<a
-  class="btn btn-primary"
-  href="edit-books.html?id=${book.id}"
->
-  edit
-</a>
+
+          <a
+            class="btn btn-primary"
+            href="edit-books.html?id=${book.id}"
+          >
+            Edit
+          </a>
         </div>
-      `,
-    )
+      `;
+    })
     .join('');
 
   container.innerHTML = booksHTML;
 }
 
-// Display books to admin
+// Hämta och visa böcker för admin
 async function displayBooksToAdmin() {
   try {
     const books = await getBooks();
