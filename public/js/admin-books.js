@@ -29,19 +29,20 @@ function renderAdminBooks(books, container) {
           <p>Genres: ${genresHTML}</p>
           <p>Published Year: ${book.published_year}</p>
 
+          <a
+            class="btn btn-sm btn-outline-secondary edit-btn"
+            href="edit-books.html?id=${book.id}"
+          >
+            Edit
+          </a>
+
           <button
-            class="btn btn-primary delete-button"
+            class="btn btn-sm btn-outline-danger delete-btn"
             data-book-id="${book.id}"
           >
             Delete
           </button>
 
-          <a
-            class="btn btn-primary"
-            href="edit-books.html?id=${book.id}"
-          >
-            Edit
-          </a>
         </div>
       `;
     })
