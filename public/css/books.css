@@ -150,6 +150,20 @@
   overflow: hidden;
 }
 
+.flex-container {
+  display: flex;
+  gap: 20px;
+}
+.bookThumbnail {
+  width: 140px;
+  height: 200px;
+
+  object-fit: cover;
+  border-radius: var(--radius-small);
+
+  flex-shrink: 0;
+}
+
 #adminBookList .bookInfo {
   display: flex;
   flex-direction: column;
