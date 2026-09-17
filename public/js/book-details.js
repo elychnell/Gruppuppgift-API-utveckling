@@ -40,7 +40,7 @@ const reviewsContainer = document.getElementById('reviews');
                 bookDetailsContainer.innerHTML = `
                 <div class="detailsTop">
                     <h2 class="title">${data.title}</h2>
-                    <a href="index.html" class="back-button">← Tillbaka</a>
+                    <a href="index.html" class="back-button">← Back</a>
                     </div>
                     <p class="description">${data.description}</p>
                     <p class="author">Author: ${data.author}</p>

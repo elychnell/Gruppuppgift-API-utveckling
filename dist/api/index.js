@@ -1,26 +1,26 @@
-import 'dotenv/config';
-import express from 'express';
-import cors from 'cors';
-import cookieParser from 'cookie-parser';
-import path from 'path';
-
-const app = express();
-
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+require("dotenv/config");
+const express_1 = __importDefault(require("express"));
+const cors_1 = __importDefault(require("cors"));
+const cookie_parser_1 = __importDefault(require("cookie-parser"));
+const path_1 = __importDefault(require("path"));
+const app = (0, express_1.default)();
 // in the .env file can the following variables be included
 // JWT_SECRET = 'secret'
 // NODE_ENV = 'development' # development | production
 // CLIENT_URL = 'http://localhost:4000'
-
 // Middleware
 // Reads a request body sent as JSON text and turns it into a real JavaScript
 // object, which Express hands us as req.body. Without this line req.body is
 // undefined - that is what our controllers check for first.
-app.use(express.json());
-
+app.use(express_1.default.json());
 // Reads the browser's Cookie header and splits it into req.cookies, so
 // verifyToken can reach the token as req.cookies.accessToken.
-app.use(cookieParser());
-
+app.use((0, cookie_parser_1.default)());
 // CORS only concerns requests from OTHER origins. Our own client lives in
 // public/ and is served from the same origin as this API, so the browser never
 // treats it as cross-origin and never applies any of these rules to it.
@@ -29,13 +29,10 @@ app.use(cookieParser());
 //   credentials -> whether that domain may also be logged in (send the cookie)
 // With CLIENT_URL empty, no CORS headers are sent at all and only our own
 // same-origin client can use the API from a browser.
-app.use(
-  cors({
+app.use((0, cors_1.default)({
     origin: process.env.CLIENT_URL || 'http://localhost:3000', // This makes the Express server accept requests from other domains
     credentials: true, // Allows cookies sent to this API
-  }),
-);
-
+}));
 // Serve the static client (the HTML/CSS/JS in public/).
 // Read the line from the inside out:
 //
@@ -70,25 +67,21 @@ app.use(
 //
 // On Vercel this line is mostly a local convenience - the platform serves
 // public/ by itself, before a request ever reaches this function.
-app.use(express.static(path.join(process.cwd(), 'public')));
-
+app.use(express_1.default.static(path_1.default.join(process.cwd(), 'public')));
 // Routes
-import authRouter from '../src/routes/auth';
-import reviewRoutes from '../src/routes/reviewRoutes';
-import bookRoutes from '../src/routes/bookRoutes';
-import userRouter from '../src/routes/users';
-
-app.use('/api/auth', authRouter);
-app.use('/api/reviews', reviewRoutes);
-app.use('/api/books', bookRoutes);
-app.use('/api/users', userRouter);
-
+const auth_1 = __importDefault(require("../src/routes/auth"));
+const reviewRoutes_1 = __importDefault(require("../src/routes/reviewRoutes"));
+const bookRoutes_1 = __importDefault(require("../src/routes/bookRoutes"));
+const users_1 = __importDefault(require("../src/routes/users"));
+app.use('/api/auth', auth_1.default);
+app.use('/api/reviews', reviewRoutes_1.default);
+app.use('/api/books', bookRoutes_1.default);
+app.use('/api/users', users_1.default);
 // Connect To DB
-import mongoose from 'mongoose';
-mongoose.connect(process.env.MONGODB_URL || '');
-
+const mongoose_1 = __importDefault(require("mongoose"));
+mongoose_1.default.connect(process.env.MONGODB_URL || '');
 // Start the express server
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+    console.log(`Server is running at http://localhost:${PORT}`);
 });
