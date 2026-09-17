@@ -100,17 +100,18 @@ function editUser(userId, username, isAdmin) {
     const dialog = document.createElement("dialog");
 
     dialog.innerHTML = `
-        <form id="edit-user-form">
+       <form id="edit-user-form" class="edit-user-form">
         <h2>Edit User</h2>
         <label for="edit-username">Username:</label>
         <input type="text" id="edit-username" name="edit-username" value="${username}" required>
         <label for="edit-password">Password:</label>
         <input type="password" id="edit-password" name="edit-password">
-        <label for="edit-is-admin">Is Admin:</label>
-        <input type="checkbox" id="edit-is-admin" name="edit-is-admin" ${isAdmin ? "checked" : ""}>
-
-        <button type="submit">Save</button>
-        <button type="button" id="cancel-edit">Cancel</button>
+        <div class="is-admin-container">
+            <label for="edit-is-admin">Is Admin:</label>
+            <input type="checkbox" id="edit-is-admin" name="edit-is-admin" ${isAdmin ? "checked" : ""}>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-outline-secondary" id="cancel-edit">Cancel</button>
     </form>`;
 
     document.body.appendChild(dialog);
