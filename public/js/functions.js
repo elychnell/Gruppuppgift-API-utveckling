@@ -1,5 +1,6 @@
 const API_URL = "/api"
 
-import { toggleLoginButtons, toggleAdminNav } from './auth.js';
+import { toggleLoginButtons, toggleAdminNav, setupAdminDropdown } from './auth.js';
 toggleLoginButtons();
 toggleAdminNav();
+setupAdminDropdown();
