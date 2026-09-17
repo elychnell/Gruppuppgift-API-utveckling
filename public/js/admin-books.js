@@ -28,16 +28,16 @@ function renderAdminBooks(books, container) {
              <img class= "bookThumbnail" src="${book.thumbnail}" alt="${book.title}">
             </div>
             <div>
-             <h3>${book.title}</hs3>
-             <h4>Author:</h4><p> ${book.author}</p>
+             <h2>${book.title}</h2>
+             <h3>Author:</h3><p> ${book.author}</p>
            
           
           
-          <h4>Published Year:</h4><p> ${book.published_year}</p>
-          <h4>Genres:</h4><p> ${genresHTML}</p>
+          <h3>Published Year:</h3><p> ${book.published_year}</p>
+          <h3>Genres:</h3><p> ${genresHTML}</p>
           </div>
            </div> 
-<h4>Description:</h4><p> ${book.description}</p>
+          <h3>Description:</h3><p> ${book.description}</p>
           <a
             class="btn btn-sm btn-outline-secondary edit-btn"
             href="edit-books.html?id=${book.id}"
