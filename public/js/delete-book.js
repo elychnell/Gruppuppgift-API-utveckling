@@ -31,7 +31,7 @@ document.addEventListener('click', async (event) => {
       await deleteBook(bookId);
 
       console.log(`Book with ID ${bookId} deleted successfully.`);
-
+      
       // Visa bekräftelse efter att boken har raderats
       showDeleteConfirmation();
 
