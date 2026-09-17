@@ -7,7 +7,7 @@
   --color-danger: #dc3545;
 
   --color-text: #3a3226;
-  --color-text-muted: #8a8474;
+  --color-text-muted: #535046;
 
   --color-primary: #4f6350;
   --color-primary-hover: #3f5140;
@@ -42,7 +42,7 @@ body {
 }
 
 .title,
-h1,
+h1, h2,
 .navbar-logo {
   font-family: var(--font-heading);
 }

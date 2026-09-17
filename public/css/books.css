@@ -31,7 +31,7 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-#bookList .book h3 {
+#bookList .book h2 {
   font-family: var(--font-heading);
 }
 
@@ -64,7 +64,7 @@
   min-width: 0;
 }
 
-#bookList .bookInfo h3 {
+#bookList .bookInfo h2 {
   margin-top: 0;
   margin-bottom: 10px;
 
@@ -171,7 +171,7 @@
   min-width: 0;
 }
 
-#adminBookList .book h3 {
+#adminBookList .book h2 {
   margin-top: 0;
   margin-bottom: 10px;
 
@@ -179,7 +179,7 @@
   font-family: var(--font-heading);
 }
 
-h4 {
+h3 {
   margin-bottom: 0.2rem;
   font-size: 0.8rem;
   font-weight: 500;

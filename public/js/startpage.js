@@ -43,7 +43,7 @@ function renderBooks(books, container) {
             <a href="book-details.html?bookId=${book.id}">
               <img src="${book.image}" alt="${book.title}" width="300">
               <div class="bookInfo">
-                <h3>${book.title}</h3>
+                <h2>${book.title}</h2>
                 <p>${book.description}</p>
                 <div class="genres">
                   ${genresHTML}
