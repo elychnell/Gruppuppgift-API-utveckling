@@ -157,37 +157,41 @@
   min-width: 0;
 }
 
-#adminBookList .bookInfo h3 {
+#adminBookList .book h3 {
   margin-top: 0;
   margin-bottom: 10px;
 
   color: var(--color-text);
+  font-family: var(--font-heading);
 }
 
-#adminBookList .bookInfo p {
-  margin-top: 0;
-
+h4 {
+  margin-bottom: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: 500;
   color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+#adminBookList .book p {
+  margin-bottom: 1 rem;
+  margin-top: 0;
   line-height: 1.5;
 }
 
-#adminBookList .genres {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
 #adminBookList .genre {
-  padding: 3px7px;
+  color: var(--color-accent-text);
 
+  font-weight: 500;
+  margin-right: 5px;
+  padding: 3px 7px;
   background: var(--color-genre-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-small);
-
   color: var(--color-text-muted);
   font-size: 0.9rem;
 }
-
 /*form*/
 
 .book-form {
@@ -229,9 +233,12 @@
 }
 
 .form-label {
-  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  color: var(--color-text);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 /* BOOK DETAILS */
