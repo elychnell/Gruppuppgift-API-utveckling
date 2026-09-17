@@ -1,8 +1,84 @@
-/* REVIEWS */
+.bdContainer {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
 
-  .bdContainer .reviews {
+/* BOOK DETAILS */
+  .bdContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bdContainer .detailsBox {
+    display: flex;
+    flex-direction: row;
+    gap: var(--card-gap);
+  }
+
+  .bdContainer .detailsBox .bookImg {
+    border-radius: var(--radius-medium);
+    overflow: hidden;
+  }
+
+  .bdContainer .detailsBox .bookDetails {
+    max-width: 500px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-card);
+  }
+  
+  .bdContainer .detailsBox .bookDetails .detailsTop {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .bdContainer .detailsBox .bookDetails .back-button {
+    margin-right: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 6px 12px;
+
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    text-decoration: none;
+
+    border-radius: var(--radius-small);
+  }
+
+  .bdContainer .detailsBox .bookDetails .back-button:hover {
+    background-color: var(--color-primary-hover);
+  }
+
+  .bdContainer .detailsBox .bookDetails .genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .bdContainer .detailsBox .bookDetails .genres .genre {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-small);
+    padding: 3px 7px;
+
+    background: var(--color-genre-bg);
+    color: var(--color-text-muted);
+  }
+/* REVIEWS */
+.bdContainer .reviews {
     margin-top: var(--card-gap);
     width: 700px;
+    max-width: 100%;
+    box-sizing: border-box;
 
     background: var(--color-surface);
     border: 1px solid var(--color-border);
@@ -26,7 +102,40 @@
   .bdContainer .reviews .review .content {
     margin: 0 auto;
     max-width: 600px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
+
+.bdContainer .reviews .review .editReview {
+    margin: 0 auto;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 6px 12px;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    color: var(--color-surface);
+    text-decoration: none;
+    border-radius: var(--radius-small);
+    width: 100px;
+    box-sizing: border-box;
+}
+
+.bdContainer .reviews .review .deleteReview {
+     margin: 0 auto;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 6px 12px;
+
+    border-color: var(--color-danger);
+    background: transparent;
+
+    background-color: var(--color-danger);
+    color: var(--color-surface);
+    text-decoration: none;
+    border-radius: var(--radius-small);
+    width: 100px;
+    box-sizing: border-box;
+}
 
   /* REVIEW FORM */
 
@@ -41,16 +150,14 @@
 
     width: 600px;
     max-width: 90%;
+    box-sizing: border-box;
 
     padding: 2rem;
 
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-large);
-
     box-shadow: var(--shadow-form);
-
-    box-sizing: border-box;
   }
 
   .bdContainer .addReview .reviewForm h3 {
@@ -64,6 +171,19 @@
     flex-direction: column;
     align-items: center;
   }
+
+.bdContainer .addReview .reviewForm [type="submit"] {
+    margin: 0 auto;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 6px 12px;
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    text-decoration: none;
+    border-radius: var(--radius-small);
+    width: 300px;
+}
+
 
   /* STJÄRNOR */
 
@@ -178,3 +298,41 @@
   #editReviewForm .editRating input:checked~label {
     color: var(--color-star);
   }
+
+  /* Media queries */
+  @media (max-width: 768px) {
+  .bdContainer .detailsBox {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .bdContainer .detailsBox .bookImg {
+    max-width: 100%;
+  }
+
+  .bdContainer .detailsBox .bookImg img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .bdContainer .detailsBox .bookDetails {
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+  }
+
+  .bdContainer .reviews {
+    width: 100%;
+  }
+
+  .bdContainer .addReview .reviewForm {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.25rem;
+  }
+
+  .bdContainer .addReview .reviewForm [type="submit"] {
+    width: 100%;
+  }
+}
