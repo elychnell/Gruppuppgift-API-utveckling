@@ -33,10 +33,18 @@
 
     <form class="book-form" id="createBookForm">
       <label for="image" class="form-label">Image URL</label>
-      <input class="formControl" type="text" id="image" name="image" required />
+      <input
+        placeholder="/images/large-pics/book2-thumb.jpg"
+        class="formControl"
+        type="text"
+        id="image"
+        name="image"
+        required
+      />
 
       <label for="thumbnail" class="form-label">Thumbnail URL</label>
       <input
+        placeholder="/images/small-pics/book2-thumb.jpg"
         type="text"
         class="formControl"
         id="thumbnail"
@@ -45,10 +53,18 @@
       />
 
       <label for="title" class="form-label">Title</label>
-      <input type="text" class="formControl" id="title" name="title" required />
+      <input
+        placeholder="The Great Gatsby"
+        type="text"
+        class="formControl"
+        id="title"
+        name="title"
+        required
+      />
 
       <label for="description" class="form-label">Description</label>
       <textarea
+        placeholder="A novel set in the 1920s that explores themes of wealth, love, and the American Dream."
         class="formControl"
         id="description"
         name="description"
@@ -57,6 +73,7 @@
 
       <label for="author" class="form-label">Author</label>
       <input
+        placeholder="F. Scott Fitzgerald"
         type="text"
         class="formControl"
         id="author"
@@ -66,6 +83,7 @@
 
       <label for="genres" class="form-label">Genres</label>
       <input
+        placeholder="Fiction, Classic"
         type="text"
         class="formControl"
         id="genres"
@@ -75,6 +93,7 @@
 
       <label for="published_year" class="form-label">Published Year</label>
       <input
+        placeholder="1925"
         type="number"
         min="0"
         class="formControl"
