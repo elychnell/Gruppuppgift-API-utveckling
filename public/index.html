@@ -10,18 +10,21 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/books.css">
 </head>
 
 <body>
-   <nav class="navbar">
+  <nav class="navbar">
     <div class="container-fluid">
       <span class="navbar-logo mb-0">Book API</span>
       <div class="nav-actions">
         <div class="dropdown" id="admin-dropdown" style="display: none;">
-          <button class="btn btn-outline-secondary dropdown-toggle" id="admin-dropdown-btn">Admin Panel <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="6 9 12 15 18 9"></polyline>
-  </svg></button>
+          <button class="btn btn-outline-secondary dropdown-toggle" id="admin-dropdown-btn">Admin Panel <svg width="12"
+              height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg></button>
           <div class="dropdown-menu" id="admin-dropdown-menu">
             <a href="admin-users.html">Manage Users</a>
             <a href="admin-books.html">Manage Books</a>
