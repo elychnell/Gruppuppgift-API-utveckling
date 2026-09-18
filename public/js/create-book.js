@@ -1,6 +1,6 @@
 const createBookForm = document.getElementById('createBookForm');
 
-// Skapa en ny bok
+// Create a new book via API
 async function createBook(bookData) {
   const response = await fetch('/api/books', {
     method: 'POST',
@@ -19,7 +19,7 @@ async function createBook(bookData) {
   return newBook;
 }
 
-// Hantera formulärinlämning
+//  Handle form submission
 createBookForm.addEventListener('submit', async (event) => {
   event.preventDefault();
 
@@ -61,11 +61,9 @@ createBookForm.addEventListener('submit', async (event) => {
   successMessage.classList.add('success-message');
   createBookForm.appendChild(successMessage);
 
-  // Remove the success message after 3 seconds
   setTimeout(() => {
     successMessage.remove();
   }, 3000);
 
-  // Clear the form after submission
   createBookForm.reset();
 });

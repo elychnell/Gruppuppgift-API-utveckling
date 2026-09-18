@@ -44,8 +44,8 @@ const booksSchema = new Schema(
 );
 
 booksSchema.virtual('reviews', {
-  ref: 'review', // The name of the model to populate
-  localField: '_id', // The field in the books collection that matches the foreign field
-  foreignField: 'book_id', // The field in the reviews collection that references the book
+  ref: 'review',
+  localField: '_id',
+  foreignField: 'book_id',
 });
 export default mongoose.model('book', booksSchema);
