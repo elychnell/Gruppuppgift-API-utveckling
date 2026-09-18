@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "6aabcd5144a8f6284f4647b4"
+  },
+  "name": "testsson",
+  "content": "test",
+  "rating": 2,
+  "book_id": {
+    "$oid": "6aabcb65c968f0476e667617"
+  },
+  "created_at": {
+    "$date": "2026-09-17T11:21:53.201Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aabe9a9f8c3cdddc37b29f7"
+  },
+  "name": "torsten",
+  "content": "kass",
+  "rating": 1,
+  "book_id": {
+    "$oid": "6aabcb65c968f0476e667618"
+  },
+  "created_at": {
+    "$date": "2026-09-17T13:22:49.381Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aaced9865d45c4a374bd07c"
+  },
+  "name": "Isabelle",
+  "content": "Fantastisk",
+  "rating": 5,
+  "book_id": {
+    "$oid": "6aabcb65c968f0476e66761a"
+  },
+  "created_at": {
+    "$date": "2026-09-18T07:51:52.622Z"
+  },
+  "__v": 0
+}]

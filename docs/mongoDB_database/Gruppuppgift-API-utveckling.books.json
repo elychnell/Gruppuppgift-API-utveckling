@@ -1,0 +1,105 @@
+[{
+  "_id": {
+    "$oid": "6aabcb65c968f0476e667617"
+  },
+  "title": "Skuggor i skogen",
+  "author": "Jonas Berg",
+  "published_year": 2022,
+  "description": "När en kropp hittas i en skog utanför staden dras kriminalinspektör Nora in i ett gammalt mysterium som visar sig ha kopplingar till nutidens händelser.",
+  "genres": [
+    "Deckare",
+    "Spänning"
+  ],
+  "image": "/images/large-pics/book2-large.jpg",
+  "thumbnail": "/images/small-pics/book2-thumb.jpg"
+},
+{
+  "_id": {
+    "$oid": "6aabcb65c968f0476e667618"
+  },
+  "title": "Allt jag känner",
+  "author": "Sofia Nilsson",
+  "published_year": 2023,
+  "description": "En stark och ärlig berättelse om att våga vara sig själv, om vänskap, kärlek och att hitta hem i sig själv.",
+  "genres": [
+    "Feelgood",
+    "Roman"
+  ],
+  "image": "/images/large-pics/book3-large.jpg",
+  "thumbnail": "/images/small-pics/book3-thumb.jpg"
+},
+{
+  "_id": {
+    "$oid": "6aabcb65c968f0476e667619"
+  },
+  "title": "Det sista riket",
+  "author": "Erik Holm",
+  "published_year": 2020,
+  "description": "En ung krigare, ett förtrollat rike och en uråldrig kraft som kan förändra allt. Första delen i en episk fantasyserie.",
+  "genres": [
+    "Fantasy",
+    "Äventyr"
+  ],
+  "image": "/images/large-pics/book4-large.jpg",
+  "thumbnail": "/images/small-pics/book4-thumb.jpg"
+},
+{
+  "_id": {
+    "$oid": "6aabcb65c968f0476e66761a"
+  },
+  "title": "Framtidens mat",
+  "author": "Anna Sjöberg",
+  "published_year": 2021,
+  "description": "Lär dig laga goda, enkla och hållbara rätter som gör skillnad, både för dig och planeten.",
+  "genres": [
+    "Mat & dryck",
+    "Hälsa"
+  ],
+  "image": "/images/large-pics/book5-large.jpg",
+  "thumbnail": "/images/small-pics/book5-thumb.jpg"
+},
+{
+  "_id": {
+    "$oid": "6aabcb65c968f0476e66761b"
+  },
+  "title": "Den sista brevet",
+  "author": "Karin Wahl",
+  "published_year": 2022,
+  "description": "Ett anonymt brev. En gammal hemlighet. Och en sanning som kan förändra allt.",
+  "genres": [
+    "Deckare",
+    "Thriller"
+  ],
+  "image": "/images/large-pics/book6-large.jpg",
+  "thumbnail": "/images/small-pics/book6-thumb.jpg"
+},
+{
+  "_id": {
+    "$oid": "6aabcb65c968f0476e66761c"
+  },
+  "title": "Stjärnorna över Alaska",
+  "author": "Linda Kjell",
+  "published_year": 2023,
+  "description": "Anna lämnar vardagen för en resa till Alaska och möter något hon inte räknat med. En berättelse om mod, kärlek och att våga följa sitt hjärta.",
+  "genres": [
+    "Romantik",
+    "Äventyr"
+  ],
+  "image": "/images/large-pics/book7-large.jpg",
+  "thumbnail": "/images/small-pics/book7-thumb.jpg"
+},
+{
+  "_id": {
+    "$oid": "6aabcb65c968f0476e66761e"
+  },
+  "title": "Livet i färger",
+  "author": "Malin Ek",
+  "published_year": 2022,
+  "description": "En inspirerande berättelse om att våga följa sitt hjärta, om att hitta glädjen i det lilla och skapa sitt eget liv i färger.",
+  "genres": [
+    "Feelgood",
+    "Roman"
+  ],
+  "image": "/images/large-pics/book9-large.jpg",
+  "thumbnail": "/images/small-pics/book9-thumb.jpg"
+}]
