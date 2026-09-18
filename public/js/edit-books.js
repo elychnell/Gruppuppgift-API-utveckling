@@ -97,5 +97,4 @@ cancelButton.addEventListener('click', (event) => {
   window.location.href = 'admin-books.html';
 });
 
-// Call the function to populate the form when the page loads
 populateForm();

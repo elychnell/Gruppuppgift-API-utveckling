@@ -1,6 +1,6 @@
 const adminBookListContainer = document.getElementById('adminBookList');
 
-// Hämta böcker från API
+// Get books from API
 async function getBooks() {
   const response = await fetch('/api/books');
 
@@ -13,7 +13,7 @@ async function getBooks() {
   return books;
 }
 
-// Visa admin boklistan
+// Render books for admin
 function renderAdminBooks(books, container) {
   const booksHTML = books
     .map((book) => {
@@ -61,7 +61,7 @@ function renderAdminBooks(books, container) {
   container.innerHTML = booksHTML;
 }
 
-// Hämta och visa böcker för admin
+// Display books to admin
 async function displayBooksToAdmin() {
   try {
     const books = await getBooks();
