@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express'
 import jwt from 'jsonwebtoken'
 
-export const verifyAdmin = async (req: Request, res: Response, next: NextFunction) => {
+export const verifyAdmin = (req: Request, res: Response, next: NextFunction) => {
   if (req.cookies.accessToken === undefined) {
     res.status(401).send()
     return

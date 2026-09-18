@@ -33,7 +33,7 @@ async function fetchUsers() {
                 const date = new Date(user.created_at).toLocaleDateString('sv-SE');
 
                 row.innerHTML = `
-                    <td>${user.username}</td>
+                    <td></td>
                     <td><span class="badge ${user.is_admin ? 'badge-admin' : 'badge-user'}">${user.is_admin ? 'Admin' : 'User'}</span></td>
                     <td>${date}</td>
                     <td>
@@ -44,6 +44,7 @@ async function fetchUsers() {
                     </td>
                 `;
 
+                row.querySelector("td").textContent = user.username
                 usersTableBody.appendChild(row);
             });
 
@@ -103,7 +104,7 @@ function editUser(userId, username, isAdmin) {
        <form id="edit-user-form" class="edit-user-form">
         <h2>Edit User</h2>
         <label for="edit-username">Username:</label>
-        <input type="text" id="edit-username" name="edit-username" value="${username}" required>
+        <input type="text" id="edit-username" name="edit-username" required>
         <label for="edit-password">Password:</label>
         <input type="password" id="edit-password" name="edit-password">
         <div class="is-admin-container">
@@ -115,6 +116,7 @@ function editUser(userId, username, isAdmin) {
     </form>`;
 
     document.body.appendChild(dialog);
+    dialog.querySelector("#edit-username").value = username;
     dialog.showModal();
 
     const editUserForm = dialog.querySelector("#edit-user-form");
